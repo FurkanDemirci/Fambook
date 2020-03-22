@@ -1,35 +1,18 @@
-# Copies in our code and runs NPM Install
-FROM node:12.7-alpine AS builder
-WORKDIR /usr/src/app
-COPY package.json ./
+#################
+# Build the app #
+#################
+FROM node:12.7-alpine as build
+WORKDIR /app
+COPY package.json package-lock.json ./
 RUN npm install
 COPY . .
+RUN npm install -g @angular/cli
+RUN ng build --configuration production --output-path=/dist
 
-# # Lints Code
-# FROM node:latest as linting
-# WORKDIR /usr/src/app
-# COPY — from=builder /usr/src/app/src .
-# RUN [“npm”, “lint”]
-
-# # Gets Sonarqube Scanner from Dockerhub and runs it
-# FROM newtmitch/sonar-scanner:latest as sonarqube
-# COPY — from=builder /usr/src/app/src /root/src
-
-# # Runs Unit Tests
-# FROM node:latest as unit-tests
-# WORKDIR /usr/src/app
-# COPY --from=builder /usr/src/app/ .
-# RUN [“npm”, “test”]
-
-# # Runs Accessibility Tests
-# FROM node:latest as access-tests
-# WORKDIR /usr/src/app
-# COPY --from=builder /usr/src/app/ .
-# RUN [“npm”, “access-tests”]
-
-# # Starts and Serves Web Page
-# FROM node:latest as serve
-# WORKDIR /usr/src/app
-# COPY --from=builder /usr/src/app/dest ./
-# COPY --from=builder /usr/src/app/package* ./
-# RUN [“npm”, “start”]
+################
+# Run in NGINX #
+################
+FROM nginx:alpine
+COPY --from=build /dist /usr/share/nginx/html
+COPY ./nginx-custom.conf /etc/nginx/conf.d/default.conf
+# EXPOSE 80
