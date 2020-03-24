@@ -1,0 +1,13 @@
+version: '3.5'
+services: # Here we define our service(s)
+  fambook-angular: # The name of the service
+    container_name: fambook-angular-container  # Container name
+    build: 
+        context: ./src/Fambook-angular
+        dockerfile: Dockerfile.dev # Location of our Dockerfile
+    volumes: # Volume binding
+      - './usr/src/app'
+    ports:
+      - '4200:4200' # Port mapping
+    command: >
+      bash -c "npm install && ng serve --host 0.0.0.0 --port 4200"
