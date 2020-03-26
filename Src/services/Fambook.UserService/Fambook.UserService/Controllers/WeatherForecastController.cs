@@ -24,7 +24,7 @@ namespace Fambook.UserService.Controllers
             _logger = logger;
         }
 
-        [HttpGet]
+        [HttpGet("api/weather")]
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();
