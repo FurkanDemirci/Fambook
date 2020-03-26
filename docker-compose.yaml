@@ -1,13 +1,21 @@
 version: '3.5'
-services: # Here we define our service(s)
-  fambook-angular: # The name of the service
-    container_name: fambook-angular-container  # Container name
+
+services:
+  fambook-angular:
+    image: fambook-angular-i
+    container_name: fambook-angular
     build: 
-        context: ./src/Fambook-angular
-        dockerfile: Dockerfile.dev # Location of our Dockerfile
-    volumes: # Volume binding
-      - './usr/src/app'
+      context: ./src/Fambook-angular
+      dockerfile: Dockerfile
     ports:
-      - '4200:4200' # Port mapping
-    command: >
-      bash -c "npm install && ng serve --host 0.0.0.0 --port 4200"
+      - "8080:80"
+  fambook-userservice:
+    image: fambook-userservice-i
+    container_name: fambook-userservice
+    build:
+      context: ./src/services/Fambook.UserService
+      dockerfile: Dockerfile
+    ports:
+      - "51010:80"
+    environment:
+      ENERGIESTUCK_ENERGIESERVICE_DB: 'Server=.;Database=Uplift;Trusted_Connection=True;MultipleActiveResultSets=true'

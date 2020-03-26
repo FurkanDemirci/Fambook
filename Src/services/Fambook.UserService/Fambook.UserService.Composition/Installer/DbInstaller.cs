@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Fambook.UserService.Composition.Installer.Interface;
 using Fambook.UserService.DataAccess.Data;
 using Microsoft.Extensions.Configuration;
@@ -16,7 +14,7 @@ namespace Fambook.UserService.Composition.Installer
             services.AddTransient<ApplicationDbContext>()
                 .AddEntityFrameworkSqlServer()
                 .AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
-                    configuration.GetConnectionString("DefaultConnection")));
+                    Environment.GetEnvironmentVariable("FAMBOOK_USERSERVICE_DB") ?? throw new InvalidOperationException()));
         }
     }
 }
