@@ -18,4 +18,4 @@ services:
     ports:
       - "51010:80"
     environment:
-      ENERGIESTUCK_ENERGIESERVICE_DB: 'Server=.;Database=Uplift;Trusted_Connection=True;MultipleActiveResultSets=true'
+      FAMBOOK_USERSERVICE_DB: 'Server=fdemirci.nl;Database=UserServiceDb;User ID=SA;Password=Demirci543532!'
