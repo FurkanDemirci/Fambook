@@ -1,0 +1,29 @@
+{
+  "ReRoutes": [
+    {
+      "DownstreamPathTemplate": "/user",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/user"
+    },
+    {
+      "DownstreamPathTemplate": "/message",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/message"
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl":  "https://localhost:5001" 
+  }
+}
