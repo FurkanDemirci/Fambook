@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
 
-namespace Fambook.UserService.DataAccess.Data
+namespace Fambook.MessageService.DataAccess.Data
 {
     public class ApplicationDbContext : DbContext
     {

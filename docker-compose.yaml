@@ -9,6 +9,14 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8080:80"
+  fambook-apigateway:
+    image: fambook-apigateway-i
+    container_name: fambook-apigateway
+    build:
+      context: ./src/services/Fambook.APIGateway
+      dockerfile: Dockerfile
+    ports:
+      - "51000:80"
   fambook-userservice:
     image: fambook-userservice-i
     container_name: fambook-userservice
@@ -19,3 +27,13 @@ services:
       - "51010:80"
     environment:
       FAMBOOK_USERSERVICE_DB: 'Server=fdemirci.nl;Database=UserServiceDb;User ID=SA;Password=Demirci543532!'
+  fambook-messageservice:
+    image: fambook-messageservice-i
+    container_name: fambook-messageservice
+    build:
+      context: ./src/services/Fambook.MessageService
+      dockerfile: Dockerfile
+    ports:
+      - "51020:80"
+    environment:
+      FAMBOOK_MESSAGESERVICE_DB: 'Server=fdemirci.nl;Database=MessageServiceDb;User ID=SA;Password=Demirci543532!'

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Fambook.MessageService
+namespace Fambook.MessageService.Models
 {
     public class Message
     {
