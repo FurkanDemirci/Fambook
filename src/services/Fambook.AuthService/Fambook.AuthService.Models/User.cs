@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace Fambook.UserService.Models
+namespace Fambook.AuthService.Models
 {
     public class User
     {
@@ -19,13 +19,11 @@ namespace Fambook.UserService.Models
 
         [Required]
         public string LastName { get; set; }
-        
+
         [Required]
         public string Password { get; set; }
 
         [Required]
         public string Birthdate { get; set; }
-
-        public Profile Profile { get; set; }
     }
 }

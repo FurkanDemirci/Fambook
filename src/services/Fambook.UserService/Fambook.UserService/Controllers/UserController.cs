@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Fambook.UserService.DataAccess.Data.Repository.IRepository;
 using Fambook.UserService.Models;
+using Fambook.UserService.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -13,31 +15,24 @@ namespace Fambook.UserService.Controllers
     public class UserController : ControllerBase
     {
         private readonly ILogger<UserController> _logger;
+        private readonly IUserService _userService;
 
-        public UserController(ILogger<UserController> logger)
+        public UserController(ILogger<UserController> logger, IUnitOfWork unitOfWork)
         {
             _logger = logger;
+            _userService = new Services.UserService(unitOfWork);
+        }
+
+        [HttpPost("create")]
+        public void Create(User user)
+        {
+            _userService.Create(user);
         }
 
         [HttpGet]
-        public User Get()
+        public User Get(int id)
         {
-            var profile = new Profile
-            {
-                Id = 1,
-                Gender = "Male",
-                Description = "Admin user"
-            };
-
-            return new User
-            {
-                Id = 1,
-                Email = "furkan.demirci@live.nl", 
-                FirstName = "Furkan", 
-                LastName = "Demirci", 
-                Birthdate = "05/03/1997",
-                Profile = profile
-            };
+            return _userService.Get(id);
         }
     }
 }

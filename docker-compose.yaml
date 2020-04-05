@@ -17,6 +17,16 @@ services:
       dockerfile: Dockerfile
     ports:
       - "51000:80"
+  fambook-authservice:
+    image: fambook-authservice-i
+    container_name: fambook-authservice
+    build:
+      context: ./src/services/Fambook.AuthService
+      dockerfile: Dockerfile
+    ports:
+      - "51010:80"
+    environment:
+      FAMBOOK_AUTHSERVICE_DB: 'Server=fdemirci.nl;Database=UserDb;User ID=SA;Password=Demirci543532!'
   fambook-userservice:
     image: fambook-userservice-i
     container_name: fambook-userservice
@@ -24,9 +34,9 @@ services:
       context: ./src/services/Fambook.UserService
       dockerfile: Dockerfile
     ports:
-      - "51010:80"
+      - "51020:80"
     environment:
-      FAMBOOK_USERSERVICE_DB: 'Server=fdemirci.nl;Database=UserServiceDb;User ID=SA;Password=Demirci543532!'
+      FAMBOOK_USERSERVICE_DB: 'Server=fdemirci.nl;Database=UserDb;User ID=SA;Password=Demirci543532!'
   fambook-messageservice:
     image: fambook-messageservice-i
     container_name: fambook-messageservice
@@ -34,6 +44,6 @@ services:
       context: ./src/services/Fambook.MessageService
       dockerfile: Dockerfile
     ports:
-      - "51020:80"
+      - "51030:80"
     environment:
-      FAMBOOK_MESSAGESERVICE_DB: 'Server=fdemirci.nl;Database=MessageServiceDb;User ID=SA;Password=Demirci543532!'
+      FAMBOOK_MESSAGESERVICE_DB: 'Server=fdemirci.nl;Database=MessageDb;User ID=SA;Password=Demirci543532!'

@@ -1,6 +1,29 @@
 {
   "ReRoutes": [
     {
+      "DownstreamPathTemplate": "/user/authenticate",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "fambook-authservice",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/user/authenticate",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/user/create",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "fambook-userservice",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/user/create"
+    },
+    {
       "DownstreamPathTemplate": "/user",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -9,18 +32,11 @@
           "Port": 80
         }
       ],
-      "UpstreamPathTemplate": "/api/user"
-    },
-    {
-      "DownstreamPathTemplate": "/message",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "fambook-messageservice",
-          "Port": 80
-        }
-      ],
-      "UpstreamPathTemplate": "/api/message"
+      "UpstreamPathTemplate": "/api/user",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "AuthKey",
+        "AllowedScopes": []
+      }
     }
   ],
   "GlobalConfiguration": {

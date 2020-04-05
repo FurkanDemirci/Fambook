@@ -27,7 +27,10 @@ namespace Fambook.UserService
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            // Services
             new DbInstaller().InstallServices(services, Configuration);
+            new RepoInstaller().InstallServices(services, Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

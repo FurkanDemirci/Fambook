@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Fambook.UserService.Models;
 
 namespace Fambook.UserService.DataAccess.Data.Repository.IRepository
 {
-    public interface IUnitOfWork : IDisposable
+    public interface IUserRepository : IRepository<User>
     {
-        // Repository interfaces:
-        IUserRepository User { get; }
-
-        void Save();
+        void Update(User user);
     }
 }

@@ -11,8 +11,9 @@ namespace Fambook.UserService.Composition.Installer
     {
         public void InstallServices(IServiceCollection services, IConfiguration configuration)
         {
+            var debug = "Data Source=fdemirci.nl;Initial Catalog=UserDb;User ID=SA;Password=Demirci543532!";
+
             services.AddTransient<ApplicationDbContext>()
-                .AddEntityFrameworkSqlServer()
                 .AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
                     Environment.GetEnvironmentVariable("FAMBOOK_USERSERVICE_DB") ?? throw new InvalidOperationException()));
         }
