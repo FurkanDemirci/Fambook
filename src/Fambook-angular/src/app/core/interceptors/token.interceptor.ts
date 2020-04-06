@@ -18,7 +18,7 @@ export class TokenInterceptor implements HttpInterceptor {
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         // Links to ignore the token
-        if (request.url !== `${environment.apiUrl + '/login'}`) {
+        if (request.url !== `${environment.apiUrl + '/user/authenticate'}`) {
             if (request.url !== `${environment.apiUrl + '/user/create'}`) {
                 request = request.clone({
                     setHeaders: {

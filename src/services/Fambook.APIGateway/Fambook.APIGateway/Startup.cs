@@ -30,6 +30,7 @@ namespace Fambook.APIGateway
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
             services.AddControllers();
             services.AddOcelot(Configuration);
 
@@ -66,6 +67,8 @@ namespace Fambook.APIGateway
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors(b => b.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
             app.UseEndpoints(endpoints =>
             {
