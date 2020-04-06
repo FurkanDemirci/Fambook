@@ -7,6 +7,7 @@ namespace Fambook.UserService.DataAccess.Data.Repository.IRepository
     public interface IUnitOfWork : IDisposable
     {
         // Repository interfaces:
+        IUserRepository User { get; }
 
         void Save();
     }

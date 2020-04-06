@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "Fambook.MessageService": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "message",
+      "environmentVariables": {
+        "FAMBOOK_MESSAGESERVICE_DB": "Data Source=fdemirci.nl;Initial Catalog=MessageServiceDb;User ID=SA;Password=Demirci543532!",
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://localhost:51030"
+    }
+  }
+}

@@ -19,11 +19,13 @@ namespace Fambook.UserService.Models
 
         [Required]
         public string LastName { get; set; }
+        
+        [Required]
+        public string Password { get; set; }
 
         [Required]
         public string Birthdate { get; set; }
 
         public Profile Profile { get; set; }
-
     }
 }
