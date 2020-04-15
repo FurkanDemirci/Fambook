@@ -40,6 +40,6 @@
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "https://localhost:51000"
+    "BaseUrl": "http://fdemirci.nl:51000"
   }
 }
