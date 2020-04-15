@@ -10,6 +10,7 @@ using Fambook.AuthService.DataAccess.Data;
 using Fambook.AuthService.Models;
 using Fambook.AuthService.Services.Helpers;
 using Fambook.AuthService.Services.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 
 namespace Fambook.AuthService.Services
@@ -27,7 +28,10 @@ namespace Fambook.AuthService.Services
 
         public UserWithToken Authenticate(string email, string password)
         {
-            var user = _dbContext.User.FirstOrDefault(s => s.Email == email);
+            var user = _dbContext.User
+                .Where(u => u.Email == email)
+                .Include(u => u.Profile)
+                .FirstOrDefault();
 
             // return null if user not found
             if (user == null)

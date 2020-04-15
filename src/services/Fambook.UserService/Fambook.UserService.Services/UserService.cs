@@ -22,6 +22,7 @@ namespace Fambook.UserService.Services
                 user.Birthdate == null) return;
 
             user.Password = HashPassword(user.Password);
+            user.Profile = new Profile();
 
             _unitOfWork.User.Add(user);
             _unitOfWork.Save();
@@ -32,7 +33,7 @@ namespace Fambook.UserService.Services
             if (id == 0)
                 return null;
 
-            var user = _unitOfWork.User.Get(id);
+            var user = _unitOfWork.User.GetWithProfile(id);
             return user == null ? null : user.WithoutPassword();
         }
 

@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { JwtHelperService } from '@auth0/angular-jwt';
 
 import { map } from 'rxjs/operators';
+import { User } from 'src/app/shared/models/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -14,13 +15,15 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   login(credentials) {
-    return this.http.post(this.url + '/login', JSON.stringify(credentials))
+    return this.http.post(this.url + '/user/authenticate', JSON.stringify(credentials))
       .pipe(
         map(
           response => {
-            const token: string = response.toString();
-            if (token) {
-              localStorage.setItem('token', token);
+            let userWithToken: any = response;
+            if (userWithToken !== null) {
+              let user = userWithToken.user as User;
+              localStorage.setItem('token', userWithToken.token);
+              localStorage.setItem('user', JSON.stringify(user));
               return true;
             }
           }
@@ -30,6 +33,7 @@ export class AuthService {
 
   logout() {
     localStorage.removeItem('token');
+    localStorage.removeItem('user');
   }
 
   isLoggedIn() {
@@ -42,11 +46,8 @@ export class AuthService {
     return localStorage.getItem('token');
   }
 
-  get currentUser(): any {
-    const token = localStorage.getItem('token');
-    if (!token) {
-      return null;
-    }
-    return new JwtHelperService().decodeToken(token);
+  get currentUser() {
+    let parsedUser = JSON.parse(localStorage.getItem('user'));
+    return parsedUser;
   }
 }

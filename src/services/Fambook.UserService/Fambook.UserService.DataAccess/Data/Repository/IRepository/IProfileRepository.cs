@@ -5,9 +5,8 @@ using Fambook.UserService.Models;
 
 namespace Fambook.UserService.DataAccess.Data.Repository.IRepository
 {
-    public interface IUserRepository : IRepository<User>
+    public interface IProfileRepository : IRepository<Profile>
     {
-        void Update(User user);
-        User GetWithProfile(int id);
+        void Update(Profile profile);
     }
 }

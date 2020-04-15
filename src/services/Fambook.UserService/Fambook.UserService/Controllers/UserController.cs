@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Fambook.UserService.DataAccess.Data.Repository.IRepository;
+﻿using Fambook.UserService.DataAccess.Data.Repository.IRepository;
 using Fambook.UserService.Models;
 using Fambook.UserService.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -24,15 +20,16 @@ namespace Fambook.UserService.Controllers
         }
 
         [HttpPost("create")]
-        public void Create(User user)
+        public IActionResult Create(User user)
         {
             _userService.Create(user);
+            return Ok();
         }
 
         [HttpGet]
-        public User Get(int id)
+        public IActionResult Get(int id)
         {
-            return _userService.Get(id);
+            return Ok(_userService.Get(id));
         }
     }
 }

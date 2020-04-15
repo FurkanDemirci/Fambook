@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Fambook.UserService.DataAccess.Migrations
 {
-    public partial class AddUserAndProfileToDatabase : Migration
+    public partial class firstinit : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,7 +14,7 @@ namespace Fambook.UserService.DataAccess.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Gender = table.Column<string>(nullable: true),
-                    ProfilePicture = table.Column<string>(nullable: true),
+                    ProfilePicture = table.Column<byte[]>(nullable: true),
                     Description = table.Column<string>(nullable: true)
                 },
                 constraints: table =>

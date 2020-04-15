@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
 using Fambook.UserService.DataAccess.Data.Repository.IRepository;
 using Fambook.UserService.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Fambook.UserService.DataAccess.Data.Repository
 {
@@ -30,6 +28,14 @@ namespace Fambook.UserService.DataAccess.Data.Repository
             }
 
             _db.SaveChanges();
+        }
+
+        public User GetWithProfile(int id)
+        {
+             return _db.User
+                 .Where(u => u.Id == id)
+                 .Include(u => u.Profile)
+                 .FirstOrDefault();
         }
     }
 }

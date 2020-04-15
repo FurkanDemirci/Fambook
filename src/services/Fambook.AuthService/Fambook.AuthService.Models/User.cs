@@ -25,5 +25,7 @@ namespace Fambook.AuthService.Models
 
         [Required]
         public string Birthdate { get; set; }
+
+        public Profile Profile { get; set; }
     }
 }
