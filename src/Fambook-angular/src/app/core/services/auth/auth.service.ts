@@ -33,6 +33,7 @@ export class AuthService {
 
   logout() {
     localStorage.removeItem('token');
+    localStorage.removeItem('user');
   }
 
   isLoggedIn() {
@@ -45,7 +46,8 @@ export class AuthService {
     return localStorage.getItem('token');
   }
 
-  getUser() {
-    return new User().deserialize(localStorage.getItem('user'));
+  get currentUser() {
+    let parsedUser = JSON.parse(localStorage.getItem('user'));
+    return parsedUser;
   }
 }

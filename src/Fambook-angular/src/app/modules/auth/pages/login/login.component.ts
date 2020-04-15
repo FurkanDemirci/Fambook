@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, Validators, FormControl, FormGroup } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth/auth.service';
 
@@ -9,13 +9,16 @@ import { AuthService } from 'src/app/core/services/auth/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  loginForm = this.fb.group({
-    email: ['', Validators.required],
-    password: ['', Validators.required],
-  });
+  loginForm: FormGroup;
   invalidLogin: boolean;
+  hide = true;
 
-  constructor(private fb: FormBuilder, private router: Router, private route: ActivatedRoute, private authService: AuthService) {}
+  constructor(private fb: FormBuilder, private router: Router, private route: ActivatedRoute, private authService: AuthService) {
+    this.loginForm = this.fb.group({
+      email: ['', Validators.email],
+      password: ['', Validators.required],
+    });
+  }
 
   onSubmit() {
     let casted = this.loginForm.value as AuthenticateUser
@@ -31,7 +34,7 @@ export class LoginComponent {
             const returnUrl = this.route.snapshot.queryParamMap.get('returnUrl');
             this.router.navigate([returnUrl || '/home']);
           }
-        }, error =>  {
+        }, error => {
           this.invalidLogin = true;
         }
       );

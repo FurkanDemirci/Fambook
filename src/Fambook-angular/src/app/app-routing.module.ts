@@ -14,7 +14,7 @@ const routes: Routes = [
     {
         path: 'home',
         component: ContentLayoutComponent,
-        canActivate: [AuthGuard],
+        canActivate: [NoAuthGuard],
     },
     {
         path: 'auth',

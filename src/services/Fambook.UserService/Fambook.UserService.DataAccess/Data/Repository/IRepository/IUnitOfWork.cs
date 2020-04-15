@@ -8,6 +8,7 @@ namespace Fambook.UserService.DataAccess.Data.Repository.IRepository
     {
         // Repository interfaces:
         IUserRepository User { get; }
+        IProfileRepository Profile { get; }
 
         void Save();
     }
