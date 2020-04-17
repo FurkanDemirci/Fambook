@@ -34,7 +34,12 @@ namespace Fambook.UserService.Services
                 return null;
 
             var user = _unitOfWork.User.GetWithProfile(id);
-            return user == null ? null : user.WithoutPassword();
+
+            if (user == null)
+                return null;
+
+            user.Profile.ProfilePicture = null;
+            return user.WithoutPassword();
         }
 
         public void Delete(User user)

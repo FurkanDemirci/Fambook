@@ -6,34 +6,41 @@ import { NoAuthGuard } from './core/guards/no-auth.guard';
 import { AuthGuard } from './core/guards/auth.guard';
 
 const routes: Routes = [
-    {
-        path: '',
-        redirectTo: '/auth/login',
-        pathMatch: 'full'
-    },
-    {
-        path: 'home',
-        component: ContentLayoutComponent,
-        canActivate: [NoAuthGuard],
-    },
-    {
-        path: 'auth',
-        component: AuthLayoutComponent,
-        loadChildren: () =>
-            import('./modules/auth/auth.module').then(m => m.AuthModule)
-    },
+  {
+    path: '',
+    redirectTo: '/auth/login',
+    pathMatch: 'full'
+  },
+  {
+    path: 'home',
+    component: ContentLayoutComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'profile',
+    component: ContentLayoutComponent,
+    canActivate: [AuthGuard],
+    loadChildren: () =>
+      import('./modules/profile/profile.module').then(m => m.ProfileModule)
+  },
+  {
+    path: 'auth',
+    component: AuthLayoutComponent,
+    loadChildren: () =>
+      import('./modules/auth/auth.module').then(m => m.AuthModule)
+  },
 
-    // Fallback when no prior routes is matched
-    // TODO: make a 404 not found page
-    { path: '**', redirectTo: '/auth/login', pathMatch: 'full' }
+  // Fallback when no prior routes is matched
+  // TODO: make a 404 not found page
+  { path: '**', redirectTo: '/auth/login', pathMatch: 'full' }
 ];
 
 @NgModule({
-    imports: [
-        RouterModule.forRoot(routes)
-    ],
-    exports: [
-        RouterModule
-    ],
+  imports: [
+    RouterModule.forRoot(routes)
+  ],
+  exports: [
+    RouterModule
+  ],
 })
 export class AppRoutingModule { }

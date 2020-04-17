@@ -10,8 +10,4 @@ export class UserService extends ApiService {
   constructor(http: HttpClient) {
     super('/user', http);
   }
-
-  get(id: any) {
-    return this.http.get(this.url + '/' + id);
-  }
 }

@@ -17,6 +17,11 @@ export class ApiService {
     return this.http.get(this.url + '/get');
   }
 
+  get(id: any) {
+    console.log(id);
+    return this.http.get(this.url + '/' + id);
+  }
+
   create(resource: any) {
     return this.http.post(this.url + '/create', resource);
   }

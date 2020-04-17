@@ -9,5 +9,6 @@ namespace Fambook.UserService.Services.Interfaces
     {
         Profile Get(int id);
         void Delete(Profile profile);
+        void Upload(int id, byte[] picture);
     }
 }

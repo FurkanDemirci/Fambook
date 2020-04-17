@@ -2,21 +2,20 @@ import { Deserializable } from './interfaces/deserializable.model';
 import { Profile } from './profile.model';
 
 export class User implements Deserializable {
-  Id: number;
-  Email: string;
-  Password: string;
-  FirstName: string;
-  LastName: string;
-  Birthdata: string;
-  Profile: Profile;
+  id: number;
+  email: string;
+  password: string;
+  firstName: string;
+  lastName: string;
+  birthdata: string;
+  profile: Profile;
 
   getFullName() {
-    return this.FirstName + ' ' + this.LastName;
+    return this.firstName + ' ' + this.lastName;
   }
 
   deserialize(input: any): this {
     Object.assign(this, input);
-    this.Profile = new Profile().deserialize(input.profile);
     return this;
   }
 }
