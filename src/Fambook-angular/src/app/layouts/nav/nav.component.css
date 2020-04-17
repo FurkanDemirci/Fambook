@@ -17,7 +17,8 @@
 }
 
 .container {
-  display: flex; /* or inline-flex */
+  /* display: flex; or inline-flex */
+  margin: 20px;
 }
 
 .spacer {
@@ -32,6 +33,7 @@ mat-toolbar a {
 }
 
 .userAvatar {
-  width: 70%;
+  width: 80%;
   margin: auto;
+  border-radius: 50%;
 }

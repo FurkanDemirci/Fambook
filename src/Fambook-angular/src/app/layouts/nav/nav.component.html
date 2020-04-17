@@ -1,10 +1,10 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
-    <mat-toolbar style="height: 160px;"><img class="userAvatar" src="../../../assets/img/user.png"></mat-toolbar>
+    <mat-toolbar style="height: 160px;"><img class="userAvatar" [src]="image"></mat-toolbar>
     <h2 style="text-align: center;">{{ user?.getFullName() }}</h2>
     <div style="width: 100%; text-align: center;">
-      <button mat-button color="accent">Edit profile</button>
+      <button routerLink="/profile/edit" mat-button color="accent">Edit profile</button>
     </div>
     <mat-divider style="margin-top: 20px; margin-bottom: 20px;"></mat-divider>
     <mat-nav-list>
@@ -19,7 +19,7 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>Fambook</span>
+      <span><a routerLink="/home">Fambook</a></span>
       <span class="spacer"></span>
       <div *ngIf="authService.isLoggedIn()" [ngClass]="{hidden: (isHandset$ | async)}">
         <button class="button-space" mat-raised-button color="accent" (click)="authService.logout()"
@@ -28,7 +28,7 @@
     </mat-toolbar>
     <!-- Add Content Here -->
     <div class="container">
-      <router-outlet>CONTENT</router-outlet>
+      <router-outlet></router-outlet>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

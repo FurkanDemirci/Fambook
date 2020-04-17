@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import {
-    HttpRequest,
-    HttpHandler,
-    HttpEvent,
-    HttpInterceptor
+  HttpRequest,
+  HttpHandler,
+  HttpEvent,
+  HttpInterceptor
 } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -14,37 +14,44 @@ import { ConnectionError } from 'src/app/shared/services/connection.error';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
-    constructor(public auth: AuthService) { }
+  constructor(public auth: AuthService) { }
 
-    intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        // Links to ignore the token
-        if (request.url !== `${environment.apiUrl + '/user/authenticate'}`) {
-            if (request.url !== `${environment.apiUrl + '/user/create'}`) {
-                request = request.clone({
-                    setHeaders: {
-                        'Authorization': this.auth.getToken(),
-                    }
-                });
-            }
-        }
+  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    // Links to ignore the token
+    if (request.url !== `${environment.apiUrl + '/user/authenticate'}`) {
+      if (request.url !== `${environment.apiUrl + '/user/create'}`) {
         request = request.clone({
-            setHeaders: {
-                'Content-Type': 'application/json',
-                // 'Enctype': 'multipart/form-data'
-            }
+          setHeaders: {
+            'Authorization': 'Bearer ' + this.auth.getToken(),
+          }
         });
-
-        // Console logging request for development purposes
-        console.log(request);
-
-        return next.handle(request).pipe(
-            catchError(this.handleError));
+      }
     }
 
-    protected handleError(error: Response) {
-        if (error.status === 400) {
-            return throwError(new ServiceError(error));
+    if (request.url.includes("upload")) {
+      request = request.clone({
+        setHeaders: {
+          // 'Content-Type': 'application/json',
         }
-        return throwError(new ConnectionError());
+      });
+    } else {
+      request = request.clone({
+        setHeaders: {
+          'Content-Type': 'application/json',
+        }
+      });
     }
+
+    console.log(request);
+
+    return next.handle(request).pipe(
+      catchError(this.handleError));
+  }
+
+  protected handleError(error: Response) {
+    if (error.status === 400) {
+      return throwError(new ServiceError(error));
+    }
+    return throwError(new ConnectionError());
+  }
 }

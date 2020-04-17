@@ -29,5 +29,12 @@ namespace Fambook.UserService.Services
         {
             throw new NotImplementedException();
         }
+
+        public void Upload(int id, byte[] picture)
+        {
+            var profile = _unitOfWork.Profile.Get(id);
+            profile.ProfilePicture = picture;
+            _unitOfWork.Profile.Update(profile);
+        }
     }
 }

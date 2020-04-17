@@ -1,10 +1,10 @@
 import { Deserializable } from './interfaces/deserializable.model';
 
 export class Profile implements Deserializable {
-  Id: string;
-  Gender: string;
-  ProfilePicture: File;
-  Description: string;
+  id: number;
+  gender: string;
+  profilePicture: any;
+  description: string;
 
   deserialize(input: any): this {
     Object.assign(this, input);
