@@ -3,10 +3,10 @@
   "profiles": {
     "Fambook.AuthService": {
       "commandName": "Project",
-      "launchBrowser": true,
+      "launchBrowser": false,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "FAMBOOK_AUTHSERVICE_DB": "Data Source=fdemirci.nl;Initial Catalog=UserDb;User ID=SA;Password=Demirci543532!"
+        "FAMBOOK_AUTHSERVICE_DB": "Data Source=fdemirci.nl;Initial Catalog=AuthDb;User ID=SA;Password=Demirci543532!"
       },
       "applicationUrl": "http://localhost:51010"
     }

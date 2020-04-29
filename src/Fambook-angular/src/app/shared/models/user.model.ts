@@ -3,8 +3,6 @@ import { Profile } from './profile.model';
 
 export class User implements Deserializable {
   id: number;
-  email: string;
-  password: string;
   firstName: string;
   lastName: string;
   birthdata: string;

@@ -1,7 +1,7 @@
 {
   "ReRoutes": [
     {
-      "DownstreamPathTemplate": "/user/authenticate",
+      "DownstreamPathTemplate": "/auth/authenticate",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -9,7 +9,7 @@
           "Port": 51010
         }
       ],
-      "UpstreamPathTemplate": "/api/user/authenticate",
+      "UpstreamPathTemplate": "/api/auth/authenticate",
       "UpstreamHttpMethod": [ "Post" ]
     },
     {
@@ -24,7 +24,7 @@
       "UpstreamPathTemplate": "/api/user/create"
     },
     {
-      "DownstreamPathTemplate": "/user",
+      "DownstreamPathTemplate": "/user/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -32,7 +32,7 @@
           "Port": 51020
         }
       ],
-      "UpstreamPathTemplate": "/api/user",
+      "UpstreamPathTemplate": "/api/user/{id}",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "AuthKey",
         "AllowedScopes": []

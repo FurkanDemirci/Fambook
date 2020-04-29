@@ -13,6 +13,6 @@ namespace Fambook.AuthService.DataAccess.Data
         {
         }
 
-        public DbSet<User> User { get; set; }
+        public DbSet<Credentials> Credentials { get; set; }
     }
 }

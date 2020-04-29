@@ -20,10 +20,8 @@ namespace Fambook.UserService.DataAccess.Data.Repository
 
             if (objFromDb != null)
             {
-                objFromDb.Email = user.Email;
                 objFromDb.FirstName = user.FirstName;
                 objFromDb.LastName = user.LastName;
-                objFromDb.Password = user.Password;
                 objFromDb.Birthdate = user.Birthdate;
             }
 
