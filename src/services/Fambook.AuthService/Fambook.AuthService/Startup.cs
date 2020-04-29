@@ -1,4 +1,5 @@
 using Fambook.AuthService.Composition.Installer;
+using Fambook.AuthService.Models;
 using Fambook.AuthService.Services;
 using Fambook.AuthService.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
@@ -23,9 +24,13 @@ namespace Fambook.AuthService
         {
             services.AddCors();
             services.AddControllers();
-            new AuthInstaller().InstallServices(services, Configuration);
+            services.Configure<Jwt>(Configuration.GetSection("Jwt"));
+            services.AddOptions();
+
+            new AuthInstaller(Configuration["Jwt:Secret"]).InstallServices(services, Configuration);
             new DbInstaller().InstallServices(services, Configuration);
             new ServicesInstaller().InstallServices(services, Configuration);
+            new HostedServiceInstaller().InstallServices(services, Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -3,7 +3,7 @@
   "profiles": {
     "Fambook.UserService": {
       "commandName": "Project",
-      "launchBrowser": true,
+      "launchBrowser": false,
       "launchUrl": "user",
       "environmentVariables": {
         "FAMBOOK_USERSERVICE_DB": "Data Source=fdemirci.nl;Initial Catalog=UserDb;User ID=SA;Password=Demirci543532!",

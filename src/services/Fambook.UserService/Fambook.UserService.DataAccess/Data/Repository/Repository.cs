@@ -11,12 +11,12 @@ namespace Fambook.UserService.DataAccess.Data.Repository
     public class Repository<T> : IRepository<T> where T : class
     {
         protected readonly DbContext Context;
-        internal DbSet<T> DbSet;
+        protected readonly DbSet<T> DbSet;
 
         public Repository(DbContext context)
         {
             this.Context = context;
-            this.DbSet = context.Set<T>();
+            this.DbSet = Context.Set<T>();
         }
 
         public T Get(int id)

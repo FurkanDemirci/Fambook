@@ -1,31 +1,57 @@
 ﻿using System;
 using System.Security.Cryptography;
+using System.Text;
+using System.Text.Json;
 using Fambook.UserService.DataAccess.Data.Repository.IRepository;
 using Fambook.UserService.Models;
 using Fambook.UserService.Services.Helpers;
 using Fambook.UserService.Services.Interfaces;
+using Newtonsoft.Json;
+using RabbitMQ.Client;
+using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace Fambook.UserService.Services
 {
     public class UserService : IUserService
     {
         private readonly IUnitOfWork _unitOfWork;
+        private IRabbitManager _manager;
 
-        public UserService(IUnitOfWork unitOfWork)
+        public UserService(IUnitOfWork unitOfWork, IRabbitManager manager)
         {
             _unitOfWork = unitOfWork;
+            _manager = manager;
         }
 
-        public void Create(User user)
+        public void Create(UserViewModel userViewModel)
         {
-            if (user.Email == null || user.Password == null || user.FirstName == null || user.LastName == null ||
-                user.Birthdate == null) return;
+            if (userViewModel.Email == null || userViewModel.Password == null || userViewModel.FirstName == null || userViewModel.LastName == null ||
+                userViewModel.Birthdate == null) return;
 
-            user.Password = HashPassword(user.Password);
-            user.Profile = new Profile();
+            var user = new User
+            {
+                FirstName = userViewModel.FirstName,
+                LastName = userViewModel.LastName,
+                Birthdate = userViewModel.Birthdate,
+                Profile = new Profile()
+            };
 
             _unitOfWork.User.Add(user);
             _unitOfWork.Save();
+
+            var credentials = new Credentials
+            {
+                Email = userViewModel.Email,
+                Password = userViewModel.Password,
+                UserId = user.Id
+            };
+
+//            var serializedObject = JsonSerializer.Serialize(credentials);
+
+            _manager.Publish(new
+            {
+                credentials
+            }, "exchange.topic.user.create", "topic", "*.queue.user.create.#");
         }
 
         public User Get(int id)
@@ -39,24 +65,12 @@ namespace Fambook.UserService.Services
                 return null;
 
             user.Profile.ProfilePicture = null;
-            return user.WithoutPassword();
+            return user;
         }
 
         public void Delete(User user)
         {
             throw new NotImplementedException();
-        }
-
-        private string HashPassword(string password)
-        {
-            byte[] salt;
-            new RNGCryptoServiceProvider().GetBytes(salt = new byte[16]);
-            var pbkdf2 = new Rfc2898DeriveBytes(password, salt, 10000);
-            byte[] hash = pbkdf2.GetBytes(20);
-            byte[] hashBytes = new byte[36];
-            Array.Copy(salt, 0, hashBytes, 0, 16);
-            Array.Copy(hash, 0, hashBytes, 16, 20);
-            return Convert.ToBase64String(hashBytes);
         }
     }
 }

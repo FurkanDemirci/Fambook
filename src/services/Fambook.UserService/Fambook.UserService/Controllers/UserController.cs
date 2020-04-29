@@ -13,21 +13,21 @@ namespace Fambook.UserService.Controllers
         private readonly ILogger<UserController> _logger;
         private readonly IUserService _userService;
 
-        public UserController(ILogger<UserController> logger, IUnitOfWork unitOfWork)
+        public UserController(ILogger<UserController> logger, IUnitOfWork unitOfWork, IRabbitManager manager)
         {
             _logger = logger;
-            _userService = new Services.UserService(unitOfWork);
+            _userService = new Services.UserService(unitOfWork, manager);
         }
 
         [HttpPost("create")]
-        public IActionResult Create(User user)
+        public IActionResult Create(UserViewModel userViewModel)
         {
-            _userService.Create(user);
+            _userService.Create(userViewModel);
             return Ok();
         }
 
-        [HttpGet]
-        public IActionResult Get(int id)
+        [HttpGet("{id}")]
+        public IActionResult Get([FromRoute] int id)
         {
             return Ok(_userService.Get(id));
         }

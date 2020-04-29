@@ -3,7 +3,7 @@
   "profiles": {
     "Fambook.APIGateway": {
       "commandName": "Project",
-      "launchBrowser": true,
+      "launchBrowser": false,
       "launchUrl": "api",
       "applicationUrl": "http://localhost:51000",
       "environmentVariables": {

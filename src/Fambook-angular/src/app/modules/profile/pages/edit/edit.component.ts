@@ -16,23 +16,21 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class EditComponent implements OnInit {
   @ViewChild("fileUpload", { static: false }) fileUpload: ElementRef; files = [];
-  user: User;
   image: any;
+  profile: Profile;
 
   constructor(
     private fb: FormBuilder,
     private profileService: ProfileService,
     private authService: AuthService,
     private sanitizer: DomSanitizer) {
-    this.user = authService.currentUser;
   }
 
-
   ngOnInit(): void {
-    this.profileService.get(this.user.profile.id)
+    this.profileService.get(this.authService.currentUser.userId)
       .subscribe(
         (response) => {
-          this.user.profile = new Profile().deserialize(response);
+          this.profile = new Profile().deserialize(response);
           this.decodeImg();
         }, error => {
           console.log(error);
@@ -48,7 +46,7 @@ export class EditComponent implements OnInit {
     const formData = new FormData();
     formData.append('file', file.data);
     file.inProgress = true;
-    this.profileService.uploadAvatar(formData, this.authService.currentUser.profile.id).pipe(
+    this.profileService.uploadAvatar(formData, this.authService.currentUser.userId).pipe(
       map(event => {
         switch (event.type) {
           case HttpEventType.UploadProgress:
@@ -87,7 +85,7 @@ export class EditComponent implements OnInit {
   }
 
   decodeImg() {
-    let objectURL = 'data:image/png;base64,' + this.user.profile.profilePicture;
+    let objectURL = 'data:image/png;base64,' + this.profile.profilePicture;
     this.image = this.sanitizer.bypassSecurityTrustUrl(objectURL);
   }
 }

@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { JwtHelperService } from '@auth0/angular-jwt';
 
 import { map } from 'rxjs/operators';
-import { User } from 'src/app/shared/models/user.model';
+import { Credentials } from 'src/app/shared/models/credentials.model';
 
 @Injectable({
   providedIn: 'root'
@@ -15,15 +15,15 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   login(credentials) {
-    return this.http.post(this.url + '/user/authenticate', JSON.stringify(credentials))
+    return this.http.post(this.url + '/auth/authenticate', JSON.stringify(credentials))
       .pipe(
         map(
           response => {
-            let userWithToken: any = response;
-            if (userWithToken !== null) {
-              let user = userWithToken.user as User;
-              localStorage.setItem('token', userWithToken.token);
-              localStorage.setItem('user', JSON.stringify(user));
+            let credentialsWithToken: any = response;
+            if (credentialsWithToken !== null) {
+              let credentials = credentialsWithToken.credentials as Credentials;
+              localStorage.setItem('token', credentialsWithToken.token);
+              localStorage.setItem('credentials', JSON.stringify(credentials));
               return true;
             }
           }
@@ -33,7 +33,7 @@ export class AuthService {
 
   logout() {
     localStorage.removeItem('token');
-    localStorage.removeItem('user');
+    localStorage.removeItem('credentials');
   }
 
   isLoggedIn() {
@@ -46,8 +46,8 @@ export class AuthService {
     return localStorage.getItem('token');
   }
 
-  get currentUser(): User {
-    let parsedUser = JSON.parse(localStorage.getItem('user'));
-    return new User().deserialize(parsedUser);
+  get currentUser(): Credentials {
+    let parsedUser = JSON.parse(localStorage.getItem('credentials'));
+    return new Credentials().deserialize(parsedUser);
   }
 }

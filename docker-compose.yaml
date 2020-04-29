@@ -1,6 +1,7 @@
 version: '3.5'
 
 services:
+  # Front-end Angular SPA
   fambook-angular:
     image: fambook-angular-i
     container_name: fambook-angular
@@ -9,6 +10,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8080:80"
+
+  # API Gateway for all the routes
   fambook-apigateway:
     image: fambook-apigateway-i
     container_name: fambook-apigateway
@@ -17,6 +20,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - "51000:80"
+
+  # Authentication with JWT
   fambook-authservice:
     image: fambook-authservice-i
     container_name: fambook-authservice
@@ -25,8 +30,13 @@ services:
       dockerfile: Dockerfile
     ports:
       - "51010:80"
+    depends_on:
+      - fambook-rabbitmq
+    restart: on-failure
     environment:
-      FAMBOOK_AUTHSERVICE_DB: 'Server=fdemirci.nl;Database=UserDb;User ID=SA;Password=Demirci543532!'
+      FAMBOOK_AUTHSERVICE_DB: 'Server=fdemirci.nl;Database=AuthDb;User ID=SA;Password=Demirci543532!'
+
+  # User service to get and create a user
   fambook-userservice:
     image: fambook-userservice-i
     container_name: fambook-userservice
@@ -35,8 +45,12 @@ services:
       dockerfile: Dockerfile
     ports:
       - "51020:80"
+    depends_on:
+      - fambook-rabbitmq
     environment:
       FAMBOOK_USERSERVICE_DB: 'Server=fdemirci.nl;Database=UserDb;User ID=SA;Password=Demirci543532!'
+
+  # Message server to send messages to others
   fambook-messageservice:
     image: fambook-messageservice-i
     container_name: fambook-messageservice
@@ -47,3 +61,22 @@ services:
       - "51030:80"
     environment:
       FAMBOOK_MESSAGESERVICE_DB: 'Server=fdemirci.nl;Database=MessageDb;User ID=SA;Password=Demirci543532!'
+
+  # RabbitMQ message broker. Login: guest:guest
+  fambook-rabbitmq:
+    image: rabbitmq:3-management
+    container_name: fambook-rabbitmq
+    labels:
+      NAME: "rabbitmq"
+    ports:
+    - "4369:4369"
+    - "5671:5671"
+    - "5672:5672"
+    - "25672:25672"
+    - "15671:15671"
+    - "15672:15672"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:15672"]
+      interval: 30s
+      timeout: 10s
+      retries: 5

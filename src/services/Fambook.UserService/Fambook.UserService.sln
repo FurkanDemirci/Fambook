@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fambook.UserService.Models"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fambook.UserService.Composition", "Fambook.UserService.Composition\Fambook.UserService.Composition.csproj", "{A068F693-3EDC-4C73-8A46-A027154C512C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fambook.UserService.Services", "Fambook.UserService.Services\Fambook.UserService.Services.csproj", "{23C7A04C-8814-47BD-9631-10DBB3A1B018}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fambook.UserService.Services", "Fambook.UserService.Services\Fambook.UserService.Services.csproj", "{23C7A04C-8814-47BD-9631-10DBB3A1B018}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fambook.UserService.DataAccess.XTest", "Fambook.UserService.DataAccess.XTest\Fambook.UserService.DataAccess.XTest.csproj", "{29DB280F-29B2-40BC-8433-65E41F4F3953}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{23C7A04C-8814-47BD-9631-10DBB3A1B018}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23C7A04C-8814-47BD-9631-10DBB3A1B018}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23C7A04C-8814-47BD-9631-10DBB3A1B018}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29DB280F-29B2-40BC-8433-65E41F4F3953}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29DB280F-29B2-40BC-8433-65E41F4F3953}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29DB280F-29B2-40BC-8433-65E41F4F3953}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29DB280F-29B2-40BC-8433-65E41F4F3953}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

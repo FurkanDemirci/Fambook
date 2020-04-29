@@ -8,15 +8,15 @@ namespace Fambook.AuthService.Services.Helpers
 {
     public static class ExtensionMethods
     {
-        public static IEnumerable<User> WithoutPasswords(this IEnumerable<User> users)
+        public static IEnumerable<Credentials> WithoutPasswords(this IEnumerable<Credentials> credential)
         {
-            return users.Select(x => x.WithoutPassword());
+            return credential.Select(x => x.WithoutPassword());
         }
 
-        public static User WithoutPassword(this User user)
+        public static Credentials WithoutPassword(this Credentials credential)
         {
-            user.Password = null;
-            return user;
+            credential.Password = null;
+            return credential;
         }
     }
 }

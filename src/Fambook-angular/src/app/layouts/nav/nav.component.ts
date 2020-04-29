@@ -7,6 +7,7 @@ import { User } from 'src/app/shared/models/user.model';
 import { ProfileService } from 'src/app/core/services/profile/profile.service';
 import { Profile } from 'src/app/shared/models/profile.model';
 import { DomSanitizer } from '@angular/platform-browser';
+import { UserService } from 'src/app/core/services/user/user.service';
 
 @Component({
   selector: 'app-nav',
@@ -26,13 +27,31 @@ export class NavComponent implements OnInit {
   constructor(
     private breakpointObserver: BreakpointObserver,
     public authService: AuthService,
+    private userService: UserService,
     private profileService: ProfileService,
     private sanitizer: DomSanitizer) {
-    this.user = authService.currentUser;
   }
 
   ngOnInit(): void {
-    this.profileService.get(this.user.profile.id)
+    this.getUser();
+    this.getProfilePictrue();
+  }
+
+  getUser() {
+    this.userService.get(this.authService.currentUser.userId)
+      .subscribe(
+        (response) => {
+          this.user = new User().deserialize(response);
+          this.decodeImg();
+        }, error => {
+          console.log(error);
+        }
+      );
+  }
+
+
+  getProfilePictrue() {
+    this.profileService.get(this.authService.currentUser.userId)
       .subscribe(
         (response) => {
           this.user.profile = new Profile().deserialize(response);

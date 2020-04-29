@@ -7,7 +7,7 @@ namespace Fambook.UserService.Services.Interfaces
 {
     public interface IUserService
     {
-        void Create(User user);
+        void Create(UserViewModel userViewModel);
         User Get(int id);
         void Delete(User user);
     }
