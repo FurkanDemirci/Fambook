@@ -32,7 +32,7 @@ namespace Fambook.AuthService.Services.Helpers
 
         private void InitRabbitMq()
         {
-            var factory = new ConnectionFactory { HostName = "localhost" };
+            var factory = new ConnectionFactory { HostName = "192.168.0.60" };
 
             // create connection  
             _connection = factory.CreateConnection();
