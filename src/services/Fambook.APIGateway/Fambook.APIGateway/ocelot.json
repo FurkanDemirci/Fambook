@@ -5,8 +5,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "192.168.0.60",
-          "Port": 51010
+          "Host": "fambook-authservice",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/api/auth/authenticate",
@@ -17,8 +17,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "192.168.0.60",
-          "Port": 51020
+          "Host": "fambook-userservice",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/api/user/create"
@@ -28,8 +28,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "192.168.0.60",
-          "Port": 51020
+          "Host": "fambook-userservice",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/api/user/{id}",
@@ -43,8 +43,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "192.168.0.60",
-          "Port": 51020
+          "Host": "fambook-userservice",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/api/profile/upload/{id}",
@@ -58,8 +58,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "192.168.0.60",
-          "Port": 51020
+          "Host": "fambook-userservice",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/api/profile/{id}",
