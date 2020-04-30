@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Fambook.UserService.DataAccess.Data.Repository.IRepository;
 using Fambook.UserService.Models;
+using Fambook.UserService.Services.Exceptions;
 using Fambook.UserService.Services.Interfaces;
 
 namespace Fambook.UserService.Services
@@ -32,7 +33,13 @@ namespace Fambook.UserService.Services
 
         public void Upload(int id, byte[] picture)
         {
+            if (id == 0)
+                throw new InvalidProfileException("Invalid id given");
+
             var profile = _unitOfWork.Profile.Get(id);
+            if (profile == null)
+                throw new InvalidProfileException("Profile does not exist");
+            
             profile.ProfilePicture = picture;
             _unitOfWork.Profile.Update(profile);
         }

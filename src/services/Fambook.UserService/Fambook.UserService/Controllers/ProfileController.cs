@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Threading.Tasks;
 using Fambook.UserService.DataAccess.Data.Repository.IRepository;
 using Fambook.UserService.Models;
@@ -38,7 +39,14 @@ namespace Fambook.UserService.Controllers
                 // Upload the file if less than 2 MB
                 if (memoryStream.Length < 2097152)
                 {
-                    _profileService.Upload(id, memoryStream.ToArray());
+                    try
+                    {
+                        _profileService.Upload(id, memoryStream.ToArray());
+                    }
+                    catch (Exception e)
+                    {
+                        return BadRequest(e.Message);
+                    }
                 }
                 else
                 {

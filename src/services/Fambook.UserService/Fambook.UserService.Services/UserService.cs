@@ -4,6 +4,7 @@ using System.Text;
 using System.Text.Json;
 using Fambook.UserService.DataAccess.Data.Repository.IRepository;
 using Fambook.UserService.Models;
+using Fambook.UserService.Services.Exceptions;
 using Fambook.UserService.Services.Helpers;
 using Fambook.UserService.Services.Interfaces;
 using Newtonsoft.Json;
@@ -25,8 +26,9 @@ namespace Fambook.UserService.Services
 
         public void Create(UserViewModel userViewModel)
         {
-            if (userViewModel.Email == null || userViewModel.Password == null || userViewModel.FirstName == null || userViewModel.LastName == null ||
-                userViewModel.Birthdate == null) return;
+            if (userViewModel.Email == null || userViewModel.Password == null || userViewModel.FirstName == null ||
+                userViewModel.LastName == null ||
+                userViewModel.Birthdate == null) throw new InvalidUserException("Not all properties are filled");
 
             var user = new User
             {
