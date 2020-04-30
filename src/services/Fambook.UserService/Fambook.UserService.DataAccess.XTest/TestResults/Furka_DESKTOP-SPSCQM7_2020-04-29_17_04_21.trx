@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="ea4e3cf0-594d-45aa-9d2d-d1a51c5697e0" name="Furka@DESKTOP-SPSCQM7 2020-04-29 17:04:21" runUser="DESKTOP-SPSCQM7\Furka" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2020-04-29T17:04:21.2695686+02:00" queuing="2020-04-29T17:04:21.2695701+02:00" start="2020-04-29T17:04:19.1960707+02:00" finish="2020-04-29T17:04:21.2895307+02:00" />
+  <TestSettings name="default" id="7b159938-d461-4003-923a-48c1ff97484e">
+    <Deployment runDeploymentRoot="Furka_DESKTOP-SPSCQM7_2020-04-29_17_04_21" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="ff4ad8d2-0bdd-420b-ab31-f21c49daa1f2" testId="ac0b48ca-362d-cf49-eccd-54e6bba64271" testName="Fambook.UserService.DataAccess.XTest.UserRepoTest.GetAll_UserObjectPassed_ProperMethodCalled" computerName="DESKTOP-SPSCQM7" duration="00:00:00.0405063" startTime="2020-04-29T17:04:21.0382354+02:00" endTime="2020-04-29T17:04:21.0382385+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ff4ad8d2-0bdd-420b-ab31-f21c49daa1f2" />
+    <UnitTestResult executionId="2273e0d3-302d-4bb8-a324-a3923709e710" testId="0336273b-2705-90f8-d739-59d8c5419941" testName="Fambook.UserService.DataAccess.XTest.UserRepoTest.Get_UserObjectPassed_ProperMethodCalled" computerName="DESKTOP-SPSCQM7" duration="00:00:00.2630225" startTime="2020-04-29T17:04:20.9982672+02:00" endTime="2020-04-29T17:04:20.9983818+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2273e0d3-302d-4bb8-a324-a3923709e710" />
+    <UnitTestResult executionId="8ca6a0e2-d2f4-4701-a34f-12ca598efe64" testId="e42a8c12-67e3-0f6b-b390-40020c2c22a4" testName="Fambook.UserService.DataAccess.XTest.UserRepoTest.Remove_UserObjectPassed_ProperMethodCalled" computerName="DESKTOP-SPSCQM7" duration="00:00:00.0082181" startTime="2020-04-29T17:04:21.0562461+02:00" endTime="2020-04-29T17:04:21.0562493+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8ca6a0e2-d2f4-4701-a34f-12ca598efe64" />
+    <UnitTestResult executionId="95394f2c-21ef-430e-af15-2c102284948a" testId="dfcced47-1806-be5e-b39f-eec004555c21" testName="Fambook.UserService.DataAccess.XTest.UserRepoTest.GetFirstOrDefault_UserObjectPassed_ProperMethodCalled" computerName="DESKTOP-SPSCQM7" duration="00:00:00.0096265" startTime="2020-04-29T17:04:21.0479531+02:00" endTime="2020-04-29T17:04:21.0479563+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="95394f2c-21ef-430e-af15-2c102284948a" />
+    <UnitTestResult executionId="79aedf08-a0d4-488f-a385-5c2653c281e7" testId="e3e905e0-ffdf-924a-d91f-014ee7e05ac9" testName="Fambook.UserService.DataAccess.XTest.UserRepoTest.Add_UserObjectPassed_ProperMethodCalled" computerName="DESKTOP-SPSCQM7" duration="00:00:00.0039968" startTime="2020-04-29T17:04:21.0603526+02:00" endTime="2020-04-29T17:04:21.0603597+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="79aedf08-a0d4-488f-a385-5c2653c281e7" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="Fambook.UserService.DataAccess.XTest.UserRepoTest.Add_UserObjectPassed_ProperMethodCalled" storage="d:\projects\fambook\src\services\fambook.userservice\fambook.userservice.dataaccess.xtest\bin\debug\netcoreapp3.1\fambook.userservice.dataaccess.xtest.dll" id="e3e905e0-ffdf-924a-d91f-014ee7e05ac9">
+      <Execution id="79aedf08-a0d4-488f-a385-5c2653c281e7" />
+      <TestMethod codeBase="D:\Projects\Fambook\src\services\Fambook.UserService\Fambook.UserService.DataAccess.XTest\bin\Debug\netcoreapp3.1\Fambook.UserService.DataAccess.XTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Fambook.UserService.DataAccess.XTest.UserRepoTest" name="Fambook.UserService.DataAccess.XTest.UserRepoTest.Add_UserObjectPassed_ProperMethodCalled" />
+    </UnitTest>
+    <UnitTest name="Fambook.UserService.DataAccess.XTest.UserRepoTest.GetFirstOrDefault_UserObjectPassed_ProperMethodCalled" storage="d:\projects\fambook\src\services\fambook.userservice\fambook.userservice.dataaccess.xtest\bin\debug\netcoreapp3.1\fambook.userservice.dataaccess.xtest.dll" id="dfcced47-1806-be5e-b39f-eec004555c21">
+      <Execution id="95394f2c-21ef-430e-af15-2c102284948a" />
+      <TestMethod codeBase="D:\Projects\Fambook\src\services\Fambook.UserService\Fambook.UserService.DataAccess.XTest\bin\Debug\netcoreapp3.1\Fambook.UserService.DataAccess.XTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Fambook.UserService.DataAccess.XTest.UserRepoTest" name="Fambook.UserService.DataAccess.XTest.UserRepoTest.GetFirstOrDefault_UserObjectPassed_ProperMethodCalled" />
+    </UnitTest>
+    <UnitTest name="Fambook.UserService.DataAccess.XTest.UserRepoTest.GetAll_UserObjectPassed_ProperMethodCalled" storage="d:\projects\fambook\src\services\fambook.userservice\fambook.userservice.dataaccess.xtest\bin\debug\netcoreapp3.1\fambook.userservice.dataaccess.xtest.dll" id="ac0b48ca-362d-cf49-eccd-54e6bba64271">
+      <Execution id="ff4ad8d2-0bdd-420b-ab31-f21c49daa1f2" />
+      <TestMethod codeBase="D:\Projects\Fambook\src\services\Fambook.UserService\Fambook.UserService.DataAccess.XTest\bin\Debug\netcoreapp3.1\Fambook.UserService.DataAccess.XTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Fambook.UserService.DataAccess.XTest.UserRepoTest" name="Fambook.UserService.DataAccess.XTest.UserRepoTest.GetAll_UserObjectPassed_ProperMethodCalled" />
+    </UnitTest>
+    <UnitTest name="Fambook.UserService.DataAccess.XTest.UserRepoTest.Get_UserObjectPassed_ProperMethodCalled" storage="d:\projects\fambook\src\services\fambook.userservice\fambook.userservice.dataaccess.xtest\bin\debug\netcoreapp3.1\fambook.userservice.dataaccess.xtest.dll" id="0336273b-2705-90f8-d739-59d8c5419941">
+      <Execution id="2273e0d3-302d-4bb8-a324-a3923709e710" />
+      <TestMethod codeBase="D:\Projects\Fambook\src\services\Fambook.UserService\Fambook.UserService.DataAccess.XTest\bin\Debug\netcoreapp3.1\Fambook.UserService.DataAccess.XTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Fambook.UserService.DataAccess.XTest.UserRepoTest" name="Fambook.UserService.DataAccess.XTest.UserRepoTest.Get_UserObjectPassed_ProperMethodCalled" />
+    </UnitTest>
+    <UnitTest name="Fambook.UserService.DataAccess.XTest.UserRepoTest.Remove_UserObjectPassed_ProperMethodCalled" storage="d:\projects\fambook\src\services\fambook.userservice\fambook.userservice.dataaccess.xtest\bin\debug\netcoreapp3.1\fambook.userservice.dataaccess.xtest.dll" id="e42a8c12-67e3-0f6b-b390-40020c2c22a4">
+      <Execution id="8ca6a0e2-d2f4-4701-a34f-12ca598efe64" />
+      <TestMethod codeBase="D:\Projects\Fambook\src\services\Fambook.UserService\Fambook.UserService.DataAccess.XTest\bin\Debug\netcoreapp3.1\Fambook.UserService.DataAccess.XTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Fambook.UserService.DataAccess.XTest.UserRepoTest" name="Fambook.UserService.DataAccess.XTest.UserRepoTest.Remove_UserObjectPassed_ProperMethodCalled" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="ac0b48ca-362d-cf49-eccd-54e6bba64271" executionId="ff4ad8d2-0bdd-420b-ab31-f21c49daa1f2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0336273b-2705-90f8-d739-59d8c5419941" executionId="2273e0d3-302d-4bb8-a324-a3923709e710" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e42a8c12-67e3-0f6b-b390-40020c2c22a4" executionId="8ca6a0e2-d2f4-4701-a34f-12ca598efe64" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="dfcced47-1806-be5e-b39f-eec004555c21" executionId="95394f2c-21ef-430e-af15-2c102284948a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e3e905e0-ffdf-924a-d91f-014ee7e05ac9" executionId="79aedf08-a0d4-488f-a385-5c2653c281e7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="5" executed="5" passed="5" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.4.0 (64-bit .NET Core 3.1.1)&#xD;
+[xUnit.net 00:00:00.66]   Discovering: Fambook.UserService.DataAccess.XTest&#xD;
+[xUnit.net 00:00:00.71]   Discovered:  Fambook.UserService.DataAccess.XTest&#xD;
+[xUnit.net 00:00:00.72]   Starting:    Fambook.UserService.DataAccess.XTest&#xD;
+[xUnit.net 00:00:01.14]   Finished:    Fambook.UserService.DataAccess.XTest&#xD;
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

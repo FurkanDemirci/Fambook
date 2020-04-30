@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="4fcf3a4b-88ba-4510-b264-04a9a945b2ce" name="Furka@DESKTOP-SPSCQM7 2020-04-30 14:17:21" runUser="DESKTOP-SPSCQM7\Furka" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2020-04-30T14:17:21.0790411+02:00" queuing="2020-04-30T14:17:21.0790431+02:00" start="2020-04-30T14:17:18.9631408+02:00" finish="2020-04-30T14:17:21.1645267+02:00" />
+  <TestSettings name="default" id="3be0db4a-c209-4521-8ba3-27f64bb23b24">
+    <Deployment runDeploymentRoot="Furka_DESKTOP-SPSCQM7_2020-04-30_14_17_21" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="42bbadf9-563b-4c3e-801d-829b79bf80ab" testId="5698f529-c073-76c2-c936-e001160c049d" testName="Fambook.UserService.Services.XTest.ProfileServiceTest.Upload_ProfilePicture_With_valid_Id_To_Non_Existing_Profile" computerName="DESKTOP-SPSCQM7" duration="00:00:00.0008262" startTime="2020-04-30T14:17:21.0236810+02:00" endTime="2020-04-30T14:17:21.0236813+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="42bbadf9-563b-4c3e-801d-829b79bf80ab" />
+    <UnitTestResult executionId="a7dd7637-3701-4a89-a860-f7ed100d223d" testId="7ceeefc4-3c38-9561-ec74-26e8aa223121" testName="Fambook.UserService.Services.XTest.UserServiceTest.Get_User_With_Invalid_Id_Returns_Null" computerName="DESKTOP-SPSCQM7" duration="00:00:00.0010607" startTime="2020-04-30T14:17:20.9672654+02:00" endTime="2020-04-30T14:17:20.9672666+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a7dd7637-3701-4a89-a860-f7ed100d223d" />
+    <UnitTestResult executionId="a2737d02-e3cf-4a35-b8ac-e83224a75209" testId="4e558f42-2cfd-7024-1978-15168ada5ab2" testName="Fambook.UserService.Services.XTest.ProfileServiceTest.Get_Profile_With_Valid_Id" computerName="DESKTOP-SPSCQM7" duration="00:00:00.0006837" startTime="2020-04-30T14:17:21.0234938+02:00" endTime="2020-04-30T14:17:21.0234950+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a2737d02-e3cf-4a35-b8ac-e83224a75209" />
+    <UnitTestResult executionId="c8c69705-f9bc-4492-82bd-b8851850a0c4" testId="45df0965-eae1-ec4c-3eb2-ada42c8dabec" testName="Fambook.UserService.Services.XTest.UserServiceTest.Get_Non_Existing_User_With_Valid_Id_Returns_Null" computerName="DESKTOP-SPSCQM7" duration="00:00:00.1527959" startTime="2020-04-30T14:17:20.9651089+02:00" endTime="2020-04-30T14:17:20.9651100+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c8c69705-f9bc-4492-82bd-b8851850a0c4" />
+    <UnitTestResult executionId="82a7695f-4d82-4b7d-acb6-1f7475c7966e" testId="527d37e0-2b53-e03d-a667-3416591d6ad1" testName="Fambook.UserService.Services.XTest.UserServiceTest.Get_User_With_Valid_Id" computerName="DESKTOP-SPSCQM7" duration="00:00:00.0087289" startTime="2020-04-30T14:17:20.9690198+02:00" endTime="2020-04-30T14:17:20.9690220+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="82a7695f-4d82-4b7d-acb6-1f7475c7966e" />
+    <UnitTestResult executionId="18a51c26-45e8-41a2-b58c-fb35061af3cc" testId="471e8940-a2aa-db05-635c-96cc7ffacde4" testName="Fambook.UserService.Services.XTest.UserServiceTest.Create_With_Valid_User_Throws_No_Exception" computerName="DESKTOP-SPSCQM7" duration="00:00:00.0087416" startTime="2020-04-30T14:17:20.9778786+02:00" endTime="2020-04-30T14:17:20.9778797+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="18a51c26-45e8-41a2-b58c-fb35061af3cc" />
+    <UnitTestResult executionId="128003a8-7695-4d7b-ac2e-19d1e00beb93" testId="70243594-e4f2-ad84-7825-1f622569df47" testName="Fambook.UserService.Services.XTest.ProfileServiceTest.Get_Profile_With_Invalid_Id_Returns_Null" computerName="DESKTOP-SPSCQM7" duration="00:00:00.0005065" startTime="2020-04-30T14:17:20.9773845+02:00" endTime="2020-04-30T14:17:20.9773857+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="128003a8-7695-4d7b-ac2e-19d1e00beb93" />
+    <UnitTestResult executionId="0c089494-edde-411d-977a-202ebd1d7b9e" testId="4339d514-ae92-5f80-8d50-5a828dfc10c0" testName="Fambook.UserService.Services.XTest.ProfileServiceTest.Upload_ProfilePicture_With_Valid_Id" computerName="DESKTOP-SPSCQM7" duration="00:00:00.0022443" startTime="2020-04-30T14:17:20.9768014+02:00" endTime="2020-04-30T14:17:20.9768042+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0c089494-edde-411d-977a-202ebd1d7b9e" />
+    <UnitTestResult executionId="5f5fd920-7744-46e9-aa80-4520dea14665" testId="5f4f33d1-44a2-b12f-30ca-f225efa0e3fc" testName="Fambook.UserService.Services.XTest.ProfileServiceTest.Upload_ProfilePicture_With_Invalid_Id" computerName="DESKTOP-SPSCQM7" duration="00:00:00.0151718" startTime="2020-04-30T14:17:20.9743925+02:00" endTime="2020-04-30T14:17:20.9743948+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5f5fd920-7744-46e9-aa80-4520dea14665" />
+    <UnitTestResult executionId="f8204284-dfa5-4332-9bd2-fa068f704847" testId="1149939c-2431-42e1-9e01-96895015deee" testName="Fambook.UserService.Services.XTest.UserServiceTest.Create_With_Invalid_User_Throws_InvalidUserException" computerName="DESKTOP-SPSCQM7" duration="00:00:00.0025495" startTime="2020-04-30T14:17:21.0237203+02:00" endTime="2020-04-30T14:17:21.0237206+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f8204284-dfa5-4332-9bd2-fa068f704847" />
+    <UnitTestResult executionId="f4ffb9e5-b546-4021-a0fb-cee531a205d7" testId="ab02b8df-7854-a304-4508-7fe033246fdd" testName="Fambook.UserService.Services.XTest.ProfileServiceTest.Get_Non_Existing_Profile_With_Valid_Id_Returns_Null" computerName="DESKTOP-SPSCQM7" duration="00:00:00.1502819" startTime="2020-04-30T14:17:20.9596022+02:00" endTime="2020-04-30T14:17:20.9597135+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f4ffb9e5-b546-4021-a0fb-cee531a205d7" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="Fambook.UserService.Services.XTest.ProfileServiceTest.Get_Profile_With_Invalid_Id_Returns_Null" storage="d:\projects\fambook\src\services\fambook.userservice\fambook.userservice.services.xtest\bin\debug\netcoreapp3.1\fambook.userservice.services.xtest.dll" id="70243594-e4f2-ad84-7825-1f622569df47">
+      <Execution id="128003a8-7695-4d7b-ac2e-19d1e00beb93" />
+      <TestMethod codeBase="D:\Projects\Fambook\src\services\Fambook.UserService\Fambook.UserService.Services.XTest\bin\Debug\netcoreapp3.1\Fambook.UserService.Services.XTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Fambook.UserService.Services.XTest.ProfileServiceTest" name="Fambook.UserService.Services.XTest.ProfileServiceTest.Get_Profile_With_Invalid_Id_Returns_Null" />
+    </UnitTest>
+    <UnitTest name="Fambook.UserService.Services.XTest.ProfileServiceTest.Get_Profile_With_Valid_Id" storage="d:\projects\fambook\src\services\fambook.userservice\fambook.userservice.services.xtest\bin\debug\netcoreapp3.1\fambook.userservice.services.xtest.dll" id="4e558f42-2cfd-7024-1978-15168ada5ab2">
+      <Execution id="a2737d02-e3cf-4a35-b8ac-e83224a75209" />
+      <TestMethod codeBase="D:\Projects\Fambook\src\services\Fambook.UserService\Fambook.UserService.Services.XTest\bin\Debug\netcoreapp3.1\Fambook.UserService.Services.XTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Fambook.UserService.Services.XTest.ProfileServiceTest" name="Fambook.UserService.Services.XTest.ProfileServiceTest.Get_Profile_With_Valid_Id" />
+    </UnitTest>
+    <UnitTest name="Fambook.UserService.Services.XTest.ProfileServiceTest.Upload_ProfilePicture_With_valid_Id_To_Non_Existing_Profile" storage="d:\projects\fambook\src\services\fambook.userservice\fambook.userservice.services.xtest\bin\debug\netcoreapp3.1\fambook.userservice.services.xtest.dll" id="5698f529-c073-76c2-c936-e001160c049d">
+      <Execution id="42bbadf9-563b-4c3e-801d-829b79bf80ab" />
+      <TestMethod codeBase="D:\Projects\Fambook\src\services\Fambook.UserService\Fambook.UserService.Services.XTest\bin\Debug\netcoreapp3.1\Fambook.UserService.Services.XTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Fambook.UserService.Services.XTest.ProfileServiceTest" name="Fambook.UserService.Services.XTest.ProfileServiceTest.Upload_ProfilePicture_With_valid_Id_To_Non_Existing_Profile" />
+    </UnitTest>
+    <UnitTest name="Fambook.UserService.Services.XTest.UserServiceTest.Get_User_With_Invalid_Id_Returns_Null" storage="d:\projects\fambook\src\services\fambook.userservice\fambook.userservice.services.xtest\bin\debug\netcoreapp3.1\fambook.userservice.services.xtest.dll" id="7ceeefc4-3c38-9561-ec74-26e8aa223121">
+      <Execution id="a7dd7637-3701-4a89-a860-f7ed100d223d" />
+      <TestMethod codeBase="D:\Projects\Fambook\src\services\Fambook.UserService\Fambook.UserService.Services.XTest\bin\Debug\netcoreapp3.1\Fambook.UserService.Services.XTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Fambook.UserService.Services.XTest.UserServiceTest" name="Fambook.UserService.Services.XTest.UserServiceTest.Get_User_With_Invalid_Id_Returns_Null" />
+    </UnitTest>
+    <UnitTest name="Fambook.UserService.Services.XTest.UserServiceTest.Get_Non_Existing_User_With_Valid_Id_Returns_Null" storage="d:\projects\fambook\src\services\fambook.userservice\fambook.userservice.services.xtest\bin\debug\netcoreapp3.1\fambook.userservice.services.xtest.dll" id="45df0965-eae1-ec4c-3eb2-ada42c8dabec">
+      <Execution id="c8c69705-f9bc-4492-82bd-b8851850a0c4" />
+      <TestMethod codeBase="D:\Projects\Fambook\src\services\Fambook.UserService\Fambook.UserService.Services.XTest\bin\Debug\netcoreapp3.1\Fambook.UserService.Services.XTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Fambook.UserService.Services.XTest.UserServiceTest" name="Fambook.UserService.Services.XTest.UserServiceTest.Get_Non_Existing_User_With_Valid_Id_Returns_Null" />
+    </UnitTest>
+    <UnitTest name="Fambook.UserService.Services.XTest.ProfileServiceTest.Upload_ProfilePicture_With_Valid_Id" storage="d:\projects\fambook\src\services\fambook.userservice\fambook.userservice.services.xtest\bin\debug\netcoreapp3.1\fambook.userservice.services.xtest.dll" id="4339d514-ae92-5f80-8d50-5a828dfc10c0">
+      <Execution id="0c089494-edde-411d-977a-202ebd1d7b9e" />
+      <TestMethod codeBase="D:\Projects\Fambook\src\services\Fambook.UserService\Fambook.UserService.Services.XTest\bin\Debug\netcoreapp3.1\Fambook.UserService.Services.XTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Fambook.UserService.Services.XTest.ProfileServiceTest" name="Fambook.UserService.Services.XTest.ProfileServiceTest.Upload_ProfilePicture_With_Valid_Id" />
+    </UnitTest>
+    <UnitTest name="Fambook.UserService.Services.XTest.UserServiceTest.Create_With_Invalid_User_Throws_InvalidUserException" storage="d:\projects\fambook\src\services\fambook.userservice\fambook.userservice.services.xtest\bin\debug\netcoreapp3.1\fambook.userservice.services.xtest.dll" id="1149939c-2431-42e1-9e01-96895015deee">
+      <Execution id="f8204284-dfa5-4332-9bd2-fa068f704847" />
+      <TestMethod codeBase="D:\Projects\Fambook\src\services\Fambook.UserService\Fambook.UserService.Services.XTest\bin\Debug\netcoreapp3.1\Fambook.UserService.Services.XTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Fambook.UserService.Services.XTest.UserServiceTest" name="Fambook.UserService.Services.XTest.UserServiceTest.Create_With_Invalid_User_Throws_InvalidUserException" />
+    </UnitTest>
+    <UnitTest name="Fambook.UserService.Services.XTest.ProfileServiceTest.Upload_ProfilePicture_With_Invalid_Id" storage="d:\projects\fambook\src\services\fambook.userservice\fambook.userservice.services.xtest\bin\debug\netcoreapp3.1\fambook.userservice.services.xtest.dll" id="5f4f33d1-44a2-b12f-30ca-f225efa0e3fc">
+      <Execution id="5f5fd920-7744-46e9-aa80-4520dea14665" />
+      <TestMethod codeBase="D:\Projects\Fambook\src\services\Fambook.UserService\Fambook.UserService.Services.XTest\bin\Debug\netcoreapp3.1\Fambook.UserService.Services.XTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Fambook.UserService.Services.XTest.ProfileServiceTest" name="Fambook.UserService.Services.XTest.ProfileServiceTest.Upload_ProfilePicture_With_Invalid_Id" />
+    </UnitTest>
+    <UnitTest name="Fambook.UserService.Services.XTest.UserServiceTest.Get_User_With_Valid_Id" storage="d:\projects\fambook\src\services\fambook.userservice\fambook.userservice.services.xtest\bin\debug\netcoreapp3.1\fambook.userservice.services.xtest.dll" id="527d37e0-2b53-e03d-a667-3416591d6ad1">
+      <Execution id="82a7695f-4d82-4b7d-acb6-1f7475c7966e" />
+      <TestMethod codeBase="D:\Projects\Fambook\src\services\Fambook.UserService\Fambook.UserService.Services.XTest\bin\Debug\netcoreapp3.1\Fambook.UserService.Services.XTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Fambook.UserService.Services.XTest.UserServiceTest" name="Fambook.UserService.Services.XTest.UserServiceTest.Get_User_With_Valid_Id" />
+    </UnitTest>
+    <UnitTest name="Fambook.UserService.Services.XTest.UserServiceTest.Create_With_Valid_User_Throws_No_Exception" storage="d:\projects\fambook\src\services\fambook.userservice\fambook.userservice.services.xtest\bin\debug\netcoreapp3.1\fambook.userservice.services.xtest.dll" id="471e8940-a2aa-db05-635c-96cc7ffacde4">
+      <Execution id="18a51c26-45e8-41a2-b58c-fb35061af3cc" />
+      <TestMethod codeBase="D:\Projects\Fambook\src\services\Fambook.UserService\Fambook.UserService.Services.XTest\bin\Debug\netcoreapp3.1\Fambook.UserService.Services.XTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Fambook.UserService.Services.XTest.UserServiceTest" name="Fambook.UserService.Services.XTest.UserServiceTest.Create_With_Valid_User_Throws_No_Exception" />
+    </UnitTest>
+    <UnitTest name="Fambook.UserService.Services.XTest.ProfileServiceTest.Get_Non_Existing_Profile_With_Valid_Id_Returns_Null" storage="d:\projects\fambook\src\services\fambook.userservice\fambook.userservice.services.xtest\bin\debug\netcoreapp3.1\fambook.userservice.services.xtest.dll" id="ab02b8df-7854-a304-4508-7fe033246fdd">
+      <Execution id="f4ffb9e5-b546-4021-a0fb-cee531a205d7" />
+      <TestMethod codeBase="D:\Projects\Fambook\src\services\Fambook.UserService\Fambook.UserService.Services.XTest\bin\Debug\netcoreapp3.1\Fambook.UserService.Services.XTest.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Fambook.UserService.Services.XTest.ProfileServiceTest" name="Fambook.UserService.Services.XTest.ProfileServiceTest.Get_Non_Existing_Profile_With_Valid_Id_Returns_Null" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="5698f529-c073-76c2-c936-e001160c049d" executionId="42bbadf9-563b-4c3e-801d-829b79bf80ab" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7ceeefc4-3c38-9561-ec74-26e8aa223121" executionId="a7dd7637-3701-4a89-a860-f7ed100d223d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4e558f42-2cfd-7024-1978-15168ada5ab2" executionId="a2737d02-e3cf-4a35-b8ac-e83224a75209" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="45df0965-eae1-ec4c-3eb2-ada42c8dabec" executionId="c8c69705-f9bc-4492-82bd-b8851850a0c4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="527d37e0-2b53-e03d-a667-3416591d6ad1" executionId="82a7695f-4d82-4b7d-acb6-1f7475c7966e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="471e8940-a2aa-db05-635c-96cc7ffacde4" executionId="18a51c26-45e8-41a2-b58c-fb35061af3cc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="70243594-e4f2-ad84-7825-1f622569df47" executionId="128003a8-7695-4d7b-ac2e-19d1e00beb93" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4339d514-ae92-5f80-8d50-5a828dfc10c0" executionId="0c089494-edde-411d-977a-202ebd1d7b9e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5f4f33d1-44a2-b12f-30ca-f225efa0e3fc" executionId="5f5fd920-7744-46e9-aa80-4520dea14665" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1149939c-2431-42e1-9e01-96895015deee" executionId="f8204284-dfa5-4332-9bd2-fa068f704847" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ab02b8df-7854-a304-4508-7fe033246fdd" executionId="f4ffb9e5-b546-4021-a0fb-cee531a205d7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="11" executed="11" passed="11" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.4.0 (64-bit .NET Core 3.1.1)&#xD;
+[xUnit.net 00:00:00.86]   Discovering: Fambook.UserService.Services.XTest&#xD;
+[xUnit.net 00:00:00.91]   Discovered:  Fambook.UserService.Services.XTest&#xD;
+[xUnit.net 00:00:00.91]   Starting:    Fambook.UserService.Services.XTest&#xD;
+[xUnit.net 00:00:01.23]   Finished:    Fambook.UserService.Services.XTest&#xD;
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

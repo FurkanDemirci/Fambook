@@ -1,4 +1,5 @@
-﻿using Fambook.UserService.DataAccess.Data.Repository.IRepository;
+﻿using System;
+using Fambook.UserService.DataAccess.Data.Repository.IRepository;
 using Fambook.UserService.Models;
 using Fambook.UserService.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -22,7 +23,14 @@ namespace Fambook.UserService.Controllers
         [HttpPost("create")]
         public IActionResult Create(UserViewModel userViewModel)
         {
-            _userService.Create(userViewModel);
+            try
+            {
+                _userService.Create(userViewModel);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
             return Ok();
         }
 
