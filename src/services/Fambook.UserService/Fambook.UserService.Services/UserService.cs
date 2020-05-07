@@ -1,15 +1,8 @@
 ﻿using System;
-using System.Security.Cryptography;
-using System.Text;
-using System.Text.Json;
 using Fambook.UserService.DataAccess.Data.Repository.IRepository;
 using Fambook.UserService.Models;
 using Fambook.UserService.Services.Exceptions;
-using Fambook.UserService.Services.Helpers;
 using Fambook.UserService.Services.Interfaces;
-using Newtonsoft.Json;
-using RabbitMQ.Client;
-using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace Fambook.UserService.Services
 {
@@ -50,10 +43,10 @@ namespace Fambook.UserService.Services
 
 //            var serializedObject = JsonSerializer.Serialize(credentials);
 
-//            _manager.Publish(new
-//            {
-//                credentials
-//            }, "exchange.topic.user.create", "topic", "*.queue.user.create.#");
+            _manager.Publish(new
+            {
+                credentials
+            }, "exchange.topic.user.create", "topic", "*.queue.user.create.#");
         }
 
         public User Get(int id)

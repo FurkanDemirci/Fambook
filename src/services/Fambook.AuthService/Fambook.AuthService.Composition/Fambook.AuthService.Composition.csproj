@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Fambook.AuthService.Services\Fambook.AuthService.Logic.csproj" />
+    <ProjectReference Include="..\Fambook.AuthService.Logic\Fambook.AuthService.Logic.csproj" />
   </ItemGroup>
 
 </Project>
