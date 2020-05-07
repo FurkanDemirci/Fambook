@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Fambook.AuthService.Models;
 
-namespace Fambook.AuthService.Services.Helpers
+namespace Fambook.AuthService.Logic.Helpers
 {
     public static class ExtensionMethods
     {

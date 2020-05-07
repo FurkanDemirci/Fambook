@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Text.Json;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
+using Fambook.AuthService.Logic.Interfaces;
 using Fambook.AuthService.Models;
-using Fambook.AuthService.Services.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using JsonSerializer = System.Text.Json.JsonSerializer;
 
-namespace Fambook.AuthService.Services.Helpers
+namespace Fambook.AuthService.Logic.Helpers
 {
     public class ConsumeRabbitMqHostedService : BackgroundService
     {
@@ -78,9 +73,9 @@ namespace Fambook.AuthService.Services.Helpers
             _logger.LogInformation($"consumer received {content}");
             using (var scope = _scopeFactory.CreateScope())
             {
-                var userService = scope.ServiceProvider.GetRequiredService<IAuthService>();
+                var authLogic = scope.ServiceProvider.GetRequiredService<IAuthLogic>();
                 var messageContent = JsonSerializer.Deserialize<MessageContent>(content);
-                userService.Create(messageContent.credentials);
+                authLogic.CreateCredentials(messageContent.credentials);
             }
         }
 

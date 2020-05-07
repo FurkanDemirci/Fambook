@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Text;
 using Fambook.AuthService.Models;
 
-namespace Fambook.AuthService.Services.Interfaces
+namespace Fambook.AuthService.DataAccess.Data.Services.Interfaces
 {
     public interface IAuthService
     {
-        CredentialsWithToken Authenticate(string email, string password);
+        Credentials GetUser(string email);
         void Create(Credentials credentials);
     }
 }

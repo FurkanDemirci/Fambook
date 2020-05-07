@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Text;
 using Fambook.AuthService.Composition.Installer.Interface;
 using Fambook.AuthService.Models;
-using Fambook.AuthService.Services.Helpers;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

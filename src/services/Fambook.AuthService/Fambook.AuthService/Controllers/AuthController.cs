@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Fambook.AuthService.Logic.Interfaces;
 using Fambook.AuthService.Models;
-using Fambook.AuthService.Services.Helpers;
-using Fambook.AuthService.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -16,22 +15,26 @@ namespace Fambook.AuthService.Controllers
     public class AuthController : ControllerBase
     {
         private readonly ILogger<AuthController> _logger;
-        private readonly IAuthService _authService;
+        private readonly IAuthLogic _authLogic;
 
-        public AuthController(ILogger<AuthController> logger, IAuthService authService)
+        public AuthController(ILogger<AuthController> logger, IAuthLogic authLogic)
         {
             _logger = logger;
-            _authService = authService;
+            _authLogic = authLogic;
         }
 
         [HttpPost("authenticate")]
         public IActionResult Authenticate([FromBody]AuthenticateModel model)
         {
-            var userWithToken = _authService.Authenticate(model.Email, model.Password);
-
-            if (userWithToken == null)
-                return BadRequest(new { message = "Username or password is incorrect" });
-
+            CredentialsWithToken userWithToken;
+            try
+            {
+                userWithToken = _authLogic.Authenticate(model.Email, model.Password);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(new {message = e.Message});
+            }
             return Ok(userWithToken);
         }
     }

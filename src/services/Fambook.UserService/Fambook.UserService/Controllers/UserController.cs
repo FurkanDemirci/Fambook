@@ -29,7 +29,7 @@ namespace Fambook.UserService.Controllers
             }
             catch (Exception e)
             {
-                return BadRequest(e.Message);
+                return BadRequest(new {message = e.Message});
             }
             return Ok();
         }

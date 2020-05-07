@@ -50,10 +50,10 @@ namespace Fambook.UserService.Services
 
 //            var serializedObject = JsonSerializer.Serialize(credentials);
 
-            _manager.Publish(new
-            {
-                credentials
-            }, "exchange.topic.user.create", "topic", "*.queue.user.create.#");
+//            _manager.Publish(new
+//            {
+//                credentials
+//            }, "exchange.topic.user.create", "topic", "*.queue.user.create.#");
         }
 
         public User Get(int id)
