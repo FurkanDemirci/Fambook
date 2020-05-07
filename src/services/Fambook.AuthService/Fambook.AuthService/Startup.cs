@@ -1,7 +1,5 @@
 using Fambook.AuthService.Composition.Installer;
 using Fambook.AuthService.Models;
-using Fambook.AuthService.Services;
-using Fambook.AuthService.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -30,6 +28,7 @@ namespace Fambook.AuthService
             new AuthInstaller(Configuration["Jwt:Secret"]).InstallServices(services, Configuration);
             new DbInstaller().InstallServices(services, Configuration);
             new ServicesInstaller().InstallServices(services, Configuration);
+            new LogicInstaller().InstallServices(services, Configuration);
             new HostedServiceInstaller().InstallServices(services, Configuration);
         }
 

@@ -5,7 +5,7 @@ using Fambook.UserService.Services.Exceptions;
 using Moq;
 using Xunit;
 
-namespace Fambook.UserService.Services.XTest
+namespace Fambook.UserService.Services.XUnit
 {
     public class ProfileServiceTest
     {

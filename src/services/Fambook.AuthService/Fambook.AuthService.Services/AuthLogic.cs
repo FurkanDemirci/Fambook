@@ -1,56 +1,47 @@
 ﻿using System;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
-using Fambook.AuthService.DataAccess.Data;
+using Fambook.AuthService.DataAccess.Data.Services.Interfaces;
+using Fambook.AuthService.Logic.Exceptions;
+using Fambook.AuthService.Logic.Helpers;
+using Fambook.AuthService.Logic.Interfaces;
 using Fambook.AuthService.Models;
-using Fambook.AuthService.Services.Helpers;
-using Fambook.AuthService.Services.Interfaces;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
-using RabbitMQ.Client;
-using RabbitMQ.Client.Events;
 
-namespace Fambook.AuthService.Services
+namespace Fambook.AuthService.Logic
 {
-    public class AuthService : IAuthService
+    public class AuthLogic : IAuthLogic
     {
-        private readonly ApplicationDbContext _dbContext;
+        private readonly IAuthService _authService;
         private readonly Jwt _jwtOptions;
 
-        public AuthService(ApplicationDbContext dbContext, IOptions<Jwt> jwtOptions)
+        public AuthLogic(IAuthService authService, IOptions<Jwt> jwtOptions)
         {
-            _dbContext = dbContext;
+            _authService = authService;
             _jwtOptions = jwtOptions.Value;
         }
 
-        public void Create(Credentials credentials)
+        public void CreateCredentials(Credentials credentials)
         {
+            if ((credentials == null) || (credentials.Email == "") || (credentials.Password == ""))
+                throw new InvalidCredentialsException("Invalid credentials given");
+
             credentials.Password = HashPassword(credentials.Password);
-            _dbContext.Credentials.Add(credentials);
-            _dbContext.SaveChanges();
+            _authService.Create(credentials);
         }
 
         public CredentialsWithToken Authenticate(string email, string password)
         {
-            var credentials = _dbContext.Credentials
-                .FirstOrDefault(u => u.Email == email);
+            var credentials = _authService.GetUser(email);
 
             // return null if user not found
             if (credentials == null)
-                return null;
+                throw new UnauthorizedAccessException("Invalid email");
 
-            try
-            {
-                DeHashPassword(password, credentials.Password);
-            }
-            catch
-            {
-                return null;
-            }
+            DeHashPassword(password, credentials.Password);
 
             // authentication successful so generate jwt token
             var tokenHandler = new JwtSecurityTokenHandler();
@@ -67,10 +58,10 @@ namespace Fambook.AuthService.Services
             var token = tokenHandler.CreateToken(tokenDescriptor);
 
             credentials = credentials.WithoutPassword();
-            return new CredentialsWithToken{Credentials = credentials, Token = tokenHandler.WriteToken(token) };
+            return new CredentialsWithToken { Credentials = credentials, Token = tokenHandler.WriteToken(token) };
         }
 
-        private string HashPassword(string password)
+        public string HashPassword(string password)
         {
             byte[] salt;
             new RNGCryptoServiceProvider().GetBytes(salt = new byte[16]);
@@ -91,7 +82,7 @@ namespace Fambook.AuthService.Services
             byte[] hash = pbkdf2.GetBytes(20);
             for (int i = 0; i < 20; i++)
                 if (hashBytes[i + 16] != hash[i])
-                    throw new UnauthorizedAccessException();
+                    throw new UnauthorizedAccessException("Invalid password");
         }
     }
 }

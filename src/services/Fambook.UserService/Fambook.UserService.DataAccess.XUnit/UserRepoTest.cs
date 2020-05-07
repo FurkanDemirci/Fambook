@@ -1,14 +1,12 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Fambook.UserService.DataAccess.Data.Repository;
 using Fambook.UserService.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Moq;
 using Xunit;
 
-namespace Fambook.UserService.DataAccess.XTest
+namespace Fambook.UserService.DataAccess.XUnit
 {
     public class UserRepoTest
     {

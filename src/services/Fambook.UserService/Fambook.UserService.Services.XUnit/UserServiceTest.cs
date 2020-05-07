@@ -6,7 +6,7 @@ using Fambook.UserService.Services.Interfaces;
 using Moq;
 using Xunit;
 
-namespace Fambook.UserService.Services.XTest
+namespace Fambook.UserService.Services.XUnit
 {
     public class UserServiceTest
     {
