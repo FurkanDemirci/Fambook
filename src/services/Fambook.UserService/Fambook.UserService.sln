@@ -13,11 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fambook.UserService.Composi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fambook.UserService.Services", "Fambook.UserService.Services\Fambook.UserService.Services.csproj", "{23C7A04C-8814-47BD-9631-10DBB3A1B018}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fambook.UserService.DataAccess.XUnit", "Fambook.UserService.DataAccess.XTest\Fambook.UserService.DataAccess.XUnit.csproj", "{29DB280F-29B2-40BC-8433-65E41F4F3953}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fambook.UserService.XIntegration", "Fambook.UserService.XIntegration\Fambook.UserService.XIntegration.csproj", "{6C100941-E86B-4EBD-832F-D23573CBDCAC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fambook.UserService.Services.XUnit", "Fambook.UserService.Services.XTest\Fambook.UserService.Services.XUnit.csproj", "{4AC74688-26DF-4DCE-8D8C-5BAD226F4172}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fambook.UserService.DataAccess.XUnit", "Fambook.UserService.DataAccess.XUnit\Fambook.UserService.DataAccess.XUnit.csproj", "{ECF92760-2E65-4043-85CF-F58A6D602B12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fambook.UserService.XIntegration", "Fambook.UserService.XIntegration\Fambook.UserService.XIntegration.csproj", "{6C100941-E86B-4EBD-832F-D23573CBDCAC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fambook.UserService.Services.XUnit", "Fambook.UserService.Services.XUnit\Fambook.UserService.Services.XUnit.csproj", "{0D63B384-0196-4A0D-BFC7-CB558C15D6FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,18 +45,18 @@ Global
 		{23C7A04C-8814-47BD-9631-10DBB3A1B018}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23C7A04C-8814-47BD-9631-10DBB3A1B018}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23C7A04C-8814-47BD-9631-10DBB3A1B018}.Release|Any CPU.Build.0 = Release|Any CPU
-		{29DB280F-29B2-40BC-8433-65E41F4F3953}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{29DB280F-29B2-40BC-8433-65E41F4F3953}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{29DB280F-29B2-40BC-8433-65E41F4F3953}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{29DB280F-29B2-40BC-8433-65E41F4F3953}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4AC74688-26DF-4DCE-8D8C-5BAD226F4172}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4AC74688-26DF-4DCE-8D8C-5BAD226F4172}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4AC74688-26DF-4DCE-8D8C-5BAD226F4172}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4AC74688-26DF-4DCE-8D8C-5BAD226F4172}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6C100941-E86B-4EBD-832F-D23573CBDCAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6C100941-E86B-4EBD-832F-D23573CBDCAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C100941-E86B-4EBD-832F-D23573CBDCAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C100941-E86B-4EBD-832F-D23573CBDCAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECF92760-2E65-4043-85CF-F58A6D602B12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECF92760-2E65-4043-85CF-F58A6D602B12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECF92760-2E65-4043-85CF-F58A6D602B12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECF92760-2E65-4043-85CF-F58A6D602B12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D63B384-0196-4A0D-BFC7-CB558C15D6FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D63B384-0196-4A0D-BFC7-CB558C15D6FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D63B384-0196-4A0D-BFC7-CB558C15D6FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D63B384-0196-4A0D-BFC7-CB558C15D6FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
