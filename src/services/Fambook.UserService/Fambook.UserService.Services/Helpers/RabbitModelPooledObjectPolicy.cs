@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.Extensions.ObjectPool;
 using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
 using RabbitMQ.Client;
 
 namespace Fambook.UserService.Services.Helpers
@@ -12,9 +13,9 @@ namespace Fambook.UserService.Services.Helpers
         private readonly RabbitOptions _options;
         private readonly IConnection _connection;
 
-        public RabbitModelPooledObjectPolicy(IOptions<RabbitOptions> options)
+        public RabbitModelPooledObjectPolicy()
         {
-            _options = options.Value;
+            _options = JsonConvert.DeserializeObject<RabbitOptions>(Environment.GetEnvironmentVariable("FAMBOOK_RABBITMQ"));
             _connection = GetConnection();
         }
 

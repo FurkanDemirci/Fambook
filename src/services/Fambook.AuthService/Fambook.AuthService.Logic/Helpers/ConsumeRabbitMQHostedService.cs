@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using Fambook.AuthService.Logic.Interfaces;
 using Fambook.AuthService.Models;
@@ -27,7 +28,7 @@ namespace Fambook.AuthService.Logic.Helpers
 
         private void InitRabbitMq()
         {
-            var factory = new ConnectionFactory { HostName = "192.168.0.60" };
+            var factory = new ConnectionFactory { HostName = Environment.GetEnvironmentVariable("FAMBOOK_RABBITMQ") };
 
             // create connection  
             _connection = factory.CreateConnection();

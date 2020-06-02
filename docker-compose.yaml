@@ -34,7 +34,8 @@ services:
       - fambook-rabbitmq
     restart: on-failure
     environment:
-      FAMBOOK_AUTHSERVICE_DB: 'Server=fdemirci.nl;Database=AuthDb;User ID=SA;Password=Demirci543532!'
+      FAMBOOK_AUTHSERVICE_DB: 'Server=tcp:fambook.database.windows.net,1433;Initial Catalog=AuthDatabase;Persist Security Info=False;User ID=FurkanDemirci;Password=Demirci543532;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;'
+      FAMBOOK_RABBITMQ: 'localhost'
 
   # User service to get and create a user
   fambook-userservice:
@@ -48,7 +49,8 @@ services:
     depends_on:
       - fambook-rabbitmq
     environment:
-      FAMBOOK_USERSERVICE_DB: 'Server=fdemirci.nl;Database=UserDb;User ID=SA;Password=Demirci543532!'
+      FAMBOOK_USERSERVICE_DB: 'Server=tcp:fambook.database.windows.net,1433;Initial Catalog=UserDatabase;Persist Security Info=False;User ID=FurkanDemirci;Password=Demirci543532;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;'
+      FAMBOOK_RABBITMQ: '{"UserName": "guest","Password": "guest","HostName": "localhost","VHost": "/","Port": 5672}'
 
   # Message server to send messages to others
   fambook-messageservice:

@@ -13,11 +13,11 @@ namespace Fambook.AuthService.Composition.Installer
     {
         public void InstallServices(IServiceCollection services, IConfiguration configuration)
         {
-            var debug = "Data Source=fdemirci.nl;Initial Catalog=AuthDb;User ID=SA;Password=Demirci543532!";
+            var debug = "Server=tcp:fambook.database.windows.net,1433;Initial Catalog=AuthDatabase;Persist Security Info=False;User ID=FurkanDemirci;Password=Demirci543532;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
             services.AddTransient<ApplicationDbContext>()
                 .AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
-                    debug ?? throw new InvalidOperationException()));
+                    Environment.GetEnvironmentVariable("FAMBOOK_AUTHSERVICE_DB") ?? throw new InvalidOperationException()));
 
         }
     }

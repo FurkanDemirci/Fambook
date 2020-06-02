@@ -28,7 +28,7 @@ namespace Fambook.UserService
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.Configure<RabbitOptions>(Configuration.GetSection("Rabbit"));
+            //services.Configure<RabbitOptions>(Configuration.GetSection("Rabbit"));
             services.AddOptions();
 
             // Services

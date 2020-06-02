@@ -3,10 +3,10 @@
   "profiles": {
     "Fambook.AuthService": {
       "commandName": "Project",
-      "launchBrowser": false,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "FAMBOOK_AUTHSERVICE_DB": "Data Source=fdemirci.nl;Initial Catalog=AuthDb;User ID=SA;Password=Demirci543532!"
+        "FAMBOOK_AUTHSERVICE_DB": "Server=tcp:fambook.database.windows.net,1433;Initial Catalog=AuthDatabase;Persist Security Info=False;User ID=FurkanDemirci;Password=Demirci543532;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;",
+        "FAMBOOK_RABBITMQ": "localhost"
       },
       "applicationUrl": "http://localhost:51010"
     }

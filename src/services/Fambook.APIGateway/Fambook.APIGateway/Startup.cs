@@ -15,6 +15,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Ocelot.Middleware;
 using Ocelot.DependencyInjection;
+using Ocelot.Provider.Kubernetes;
 
 namespace Fambook.APIGateway
 {
@@ -32,7 +33,8 @@ namespace Fambook.APIGateway
         {
             services.AddCors();
             services.AddControllers();
-            services.AddOcelot(Configuration);
+            services.AddOcelot(Configuration)
+                .AddKubernetes();
 
             var authenticationProviderKey = "AuthKey";
             services.AddAuthentication(x =>

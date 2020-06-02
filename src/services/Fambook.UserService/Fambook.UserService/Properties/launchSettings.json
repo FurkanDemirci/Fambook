@@ -3,11 +3,11 @@
   "profiles": {
     "Fambook.UserService": {
       "commandName": "Project",
-      "launchBrowser": false,
       "launchUrl": "user",
       "environmentVariables": {
-        "FAMBOOK_USERSERVICE_DB": "Data Source=fdemirci.nl;Initial Catalog=UserDb;User ID=SA;Password=Demirci543532!",
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "FAMBOOK_USERSERVICE_DB": "Server=tcp:fambook.database.windows.net,1433;Initial Catalog=UserDatabase;Persist Security Info=False;User ID=FurkanDemirci;Password=Demirci543532;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;",
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "FAMBOOK_RABBITMQ": "{\"UserName\": \"guest\",\"Password\": \"guest\",\"HostName\": \"localhost\",\"VHost\": \"/\",\"Port\": 5672}"
       },
       "applicationUrl": "http://localhost:51020"
     }
