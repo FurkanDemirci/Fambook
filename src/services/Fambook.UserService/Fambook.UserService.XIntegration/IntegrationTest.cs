@@ -25,7 +25,8 @@ namespace Fambook.UserService.XIntegration
         public IntegrationTest()
         {
             // Arrange
-            Environment.SetEnvironmentVariable("FAMBOOK_USERSERVICE_DB", "Data Source=fdemirci.nl;Initial Catalog=UserDb;User ID=SA;Password=Demirci543532!");
+            Environment.SetEnvironmentVariable("FAMBOOK_USERSERVICE_DB", "Server=tcp:fambook.database.windows.net,1433;Initial Catalog=UserDatabase;Persist Security Info=False;User ID=FurkanDemirci;Password=Demirci543532;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+            Environment.SetEnvironmentVariable("FAMBOOK_RABBITMQ", "{\"UserName\": \"guest\",\"Password\": \"guest\",\"HostName\": \"192.168.0.60\",\"VHost\": \"/\",\"Port\": 5672}");
             var projectDir = GetProjectPath("", typeof(Startup).GetTypeInfo().Assembly);
             _server = new TestServer(new WebHostBuilder()
                 .UseContentRoot(projectDir)
@@ -117,8 +118,8 @@ namespace Fambook.UserService.XIntegration
             var message = new User
             {
                 Id = 1,
-                FirstName = "Admin",
-                LastName = "Admin",
+                FirstName = "Furkan",
+                LastName = "Demirci",
                 Birthdate = "01/01/0001",
                 Profile = new Profile
                 {
