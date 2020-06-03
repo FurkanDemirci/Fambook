@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: "http://fdemirci.nl:51000/api"
+  apiUrl: "http://fambook-apigateway-service:51000/api"
 };
