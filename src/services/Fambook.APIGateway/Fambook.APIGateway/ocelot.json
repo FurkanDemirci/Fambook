@@ -42,7 +42,7 @@
   ],
   "GlobalConfiguration": {
     "ServiceDiscoveryProvider": {
-      "Namespace": "dev",
+      "Namespace": "default",
       "Type": "kube"
     }
   }
