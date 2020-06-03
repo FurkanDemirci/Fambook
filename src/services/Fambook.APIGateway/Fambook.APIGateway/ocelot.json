@@ -45,7 +45,7 @@
       "Host": "10.96.0.1",
       "Port": 443,
       "Token": "txpc696iUhbVoudg164r93CxDTrKRVWG",
-      "Namespace": "dev",
+      "Namespace": "default",
       "Type": "kube"
     }
   }
