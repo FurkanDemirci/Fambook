@@ -46,7 +46,8 @@
       "Port": 443,
       "Token": "txpc696iUhbVoudg164r93CxDTrKRVWG",
       "Namespace": "default",
-      "Type": "kube"
+      "Type": "pollkube",
+      "PollingInterval": 100
     }
   }
 }
