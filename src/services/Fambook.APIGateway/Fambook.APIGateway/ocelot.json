@@ -17,11 +17,7 @@
       "DownstreamPathTemplate": "/user/{id}",
       "DownstreamScheme": "http",
       "UpstreamPathTemplate": "/api/user/{id}",
-      "ServiceName": "fambook-userservice-service",
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "AuthKey",
-        "AllowedScopes": []
-      }
+      "ServiceName": "fambook-userservice-service"
     },
     {
       "DownstreamPathTemplate": "/profile/upload/{id}",
