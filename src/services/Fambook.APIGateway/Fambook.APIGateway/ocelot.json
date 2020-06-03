@@ -42,9 +42,9 @@
   ],
   "GlobalConfiguration": {
     "ServiceDiscoveryProvider": {
-      "Host": "unused",
+      "Host": "10.96.0.1",
       "Port": 443,
-      "Token": "unused",
+      "Token": "txpc696iUhbVoudg164r93CxDTrKRVWG",
       "Namespace": "default",
       "Type": "kube"
     }
