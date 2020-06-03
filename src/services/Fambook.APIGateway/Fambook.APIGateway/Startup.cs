@@ -34,7 +34,7 @@ namespace Fambook.APIGateway
             services.AddCors();
             services.AddControllers();
             services.AddOcelot(Configuration)
-                .AddKubernetes();
+                .AddKubernetesFixed();
 
             var authenticationProviderKey = "AuthKey";
             services.AddAuthentication(x =>
