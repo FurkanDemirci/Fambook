@@ -5,7 +5,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "fambook-authservice-service",
+          "Host": "10.111.161.11",
           "Port": 51010
         }
       ],
@@ -17,7 +17,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "fambook-userservice-service",
+          "Host": "10.98.238.146",
           "Port": 51020
         }
       ],
@@ -28,7 +28,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "fambook-userservice-service",
+          "Host": "10.98.238.146",
           "Port": 51020
         }
       ],
@@ -43,7 +43,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "fambook-userservice-service",
+          "Host": "10.98.238.146",
           "Port": 51020
         }
       ],
@@ -58,7 +58,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "fambook-userservice-service",
+          "Host": "10.98.238.146",
           "Port": 51020
         }
       ],
