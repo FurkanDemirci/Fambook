@@ -35,7 +35,7 @@ services:
     restart: on-failure
     environment:
       FAMBOOK_AUTHSERVICE_DB: 'Server=tcp:fambook.database.windows.net,1433;Initial Catalog=AuthDatabase;Persist Security Info=False;User ID=FurkanDemirci;Password=Demirci543532;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;'
-      FAMBOOK_RABBITMQ: 'localhost'
+      FAMBOOK_RABBITMQ: '192.168.0.60'
 
   # User service to get and create a user
   fambook-userservice:

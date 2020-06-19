@@ -3,27 +3,51 @@
     {
       "DownstreamPathTemplate": "/auth/authenticate",
       "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "fambook-authservice",
+          "Port": 80
+        }
+      ],
       "UpstreamPathTemplate": "/api/auth/authenticate",
-      "ServiceName": "fambook-authservice-service",
       "UpstreamHttpMethod": [ "Post" ]
     },
     {
       "DownstreamPathTemplate": "/user/create",
       "DownstreamScheme": "http",
-      "UpstreamPathTemplate": "/api/user/create",
-      "ServiceName": "fambook-userservice-service"
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "fambook-userservice",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/user/create"
     },
     {
       "DownstreamPathTemplate": "/user/{id}",
       "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "fambook-userservice",
+          "Port": 80
+        }
+      ],
       "UpstreamPathTemplate": "/api/user/{id}",
-      "ServiceName": "fambook-userservice-service"
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "AuthKey",
+        "AllowedScopes": []
+      }
     },
     {
       "DownstreamPathTemplate": "/profile/upload/{id}",
       "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "fambook-userservice",
+          "Port": 80
+        }
+      ],
       "UpstreamPathTemplate": "/api/profile/upload/{id}",
-      "ServiceName": "fambook-userservice-service",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "AuthKey",
         "AllowedScopes": []
@@ -32,8 +56,13 @@
     {
       "DownstreamPathTemplate": "/profile/{id}",
       "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "fambook-userservice",
+          "Port": 80
+        }
+      ],
       "UpstreamPathTemplate": "/api/profile/{id}",
-      "ServiceName": "fambook-userservice-service",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "AuthKey",
         "AllowedScopes": []
@@ -41,12 +70,6 @@
     }
   ],
   "GlobalConfiguration": {
-    "ServiceDiscoveryProvider": {
-      "Host": "10.96.0.1",
-      "Port": 443,
-      "Token": "txpc696iUhbVoudg164r93CxDTrKRVWG",
-      "Namespace": "default",
-      "Type": "kube"
-    }
+    "BaseUrl": "http://localhost:51000"
   }
 }
